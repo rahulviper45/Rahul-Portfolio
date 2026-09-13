@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pm-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151722"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </linearGradient>
+    <linearGradient id="pm-paper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2d3d"/>
+      <stop offset="100%" stop-color="#181a24"/>
+    </linearGradient>
+    <linearGradient id="pm-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6026"/>
+      <stop offset="100%" stop-color="#ffa034"/>
+    </linearGradient>
+    <linearGradient id="pm-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="520" height="320" rx="16" fill="url(#pm-bg)"/>
+
+  <!-- Background Poster Spread (Slanted) -->
+  <g transform="translate(60, 35) rotate(-5)">
+    <rect width="190" height="250" rx="8" fill="url(#pm-paper)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" filter="drop-shadow(0 15px 30px rgba(0,0,0,0.5))"/>
+    <rect x="20" y="20" width="150" height="110" rx="6" fill="#12131a"/>
+    <circle cx="95" cy="75" r="32" fill="none" stroke="url(#pm-orange)" stroke-width="2"/>
+    <circle cx="95" cy="75" r="16" fill="url(#pm-orange)" opacity="0.4"/>
+    <rect x="20" y="145" width="85" height="12" rx="3" fill="#ffffff"/>
+    <rect x="20" y="165" width="150" height="6" rx="2" fill="#64748b"/>
+    <rect x="20" y="176" width="130" height="6" rx="2" fill="#64748b"/>
+    <rect x="20" y="187" width="90" height="6" rx="2" fill="#64748b"/>
+    <!-- Barcode / Editorial mark -->
+    <rect x="20" y="215" width="50" height="14" rx="2" fill="#242838"/>
+  </g>
+
+  <!-- Foreground Packaging / Folded Brochure (Right) -->
+  <g transform="translate(240, 45) rotate(4)">
+    <rect width="210" height="240" rx="10" fill="#1b1e2c" stroke="rgba(255,96,38,0.3)" stroke-width="1.5" filter="drop-shadow(0 20px 40px rgba(0,0,0,0.6))"/>
+    
+    <!-- Header band -->
+    <rect x="18" y="18" width="174" height="65" rx="6" fill="url(#pm-orange)"/>
+    <text x="30" y="42" font-family="'Inter', sans-serif" font-weight="900" font-size="14" fill="#ffffff" letter-spacing="1">EDITORIAL</text>
+    <text x="30" y="58" font-family="'Inter', sans-serif" font-weight="600" font-size="9" fill="rgba(255,255,255,0.85)" letter-spacing="2">BRAND COLLATERAL</text>
+
+    <!-- Content columns -->
+    <rect x="18" y="100" width="80" height="100" rx="6" fill="#141622" stroke="rgba(255,255,255,0.06)"/>
+    <rect x="26" y="110" width="40" height="8" rx="2" fill="#ffffff"/>
+    <rect x="26" y="124" width="64" height="4" rx="1" fill="#64748b"/>
+    <rect x="26" y="132" width="55" height="4" rx="1" fill="#64748b"/>
+    <rect x="26" y="140" width="60" height="4" rx="1" fill="#64748b"/>
+    
+    <rect x="110" y="100" width="82" height="100" rx="6" fill="#141622" stroke="rgba(255,255,255,0.06)"/>
+    <circle cx="151" cy="135" r="20" fill="#24283b"/>
+    <polygon points="151,122 163,142 139,142" fill="#ff6026"/>
+    <rect x="120" y="165" width="62" height="4" rx="1" fill="#64748b"/>
+    <rect x="120" y="173" width="45" height="4" rx="1" fill="#64748b"/>
+
+    <!-- Foil stamp accent -->
+    <circle cx="180" cy="215" r="10" fill="url(#pm-gold)"/>
+  </g>
+
+  <!-- Badge Pill -->
+  <g transform="translate(30, 260)">
+    <rect width="135" height="30" rx="15" fill="rgba(18,20,29,0.85)" stroke="rgba(255,255,255,0.12)"/>
+    <circle cx="16" cy="15" r="4" fill="#ff6026"/>
+    <text x="28" y="19" font-family="'Inter', sans-serif" font-weight="700" font-size="10" fill="#ffffff" letter-spacing="0.5">POSTER & PACKAGING</text>
+  </g>
+</svg>

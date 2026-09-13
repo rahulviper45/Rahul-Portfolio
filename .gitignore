@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment and local config
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel deployment cache
+.vercel/
+
+# OS metadata & local system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Temporary build & editor files
+*.tmp
+*.temp
+*.swp
+*.bak
+.idea/
+.vscode/
+
+# Duplicate raw video (exact copy of zandu-good-gut.mp4)
+WhatsApp Video 2026-09-02 at 3.38.10 PM.mp4

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Print Media // Rahul Graphic Designer Portfolio</title>
+  <meta name="description" content="Premium print designs including brochures, posters, packaging, promotional materials, and brand collateral by Rahul." />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/portfolio/portfolio.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="portfolio-header">
+    <div class="container portfolio-nav">
+      <a href="/#home" class="nav-brand">
+        <img src="/viper-logo.png" alt="Rahul Viper Logo" class="viper-brand-icon" />
+        <span class="brand-text">RAHUL</span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="/#projects" class="back-btn">
+          <span class="back-arrow">←</span>
+          <span>Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Hero Section -->
+  <section class="category-hero">
+    <div class="container">
+      <div class="category-hero-content">
+        <div class="category-badge-pill">
+          <span class="badge-dot"></span>
+          <span>CATEGORY 03 // EDITORIAL & PRINT</span>
+        </div>
+        <h1 class="category-main-title">Print Media</h1>
+        <p class="category-main-subtitle">
+          Premium print designs including brochures, posters, packaging, promotional materials, and brand collateral.
+        </p>
+
+        <div class="category-meta-bar">
+          <div class="meta-item">
+            <span class="meta-label">Disciplines</span>
+            <span class="meta-value">Packaging, Editorial Layout, Event Posters, Brand Identity</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Print Finishes</span>
+            <span class="meta-value">Foil Stamping, Embossing, Die-cut, Spot UV</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Production Software</span>
+            <span class="meta-value">InDesign, Illustrator, Photoshop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Main Section -->
+  <main class="gallery-section">
+    <div class="container">
+      
+      <!-- Filter and Category Switcher -->
+      <div class="category-filter-section">
+        <div class="filter-tags">
+          <button class="filter-pill active" data-filter="all">All Print Works</button>
+          <button class="filter-pill" data-filter="featured">Featured</button>
+          <button class="filter-pill" data-filter="packaging">Packaging</button>
+          <button class="filter-pill" data-filter="editorial">Editorial & Books</button>
+          <button class="filter-pill" data-filter="poster">Posters</button>
+        </div>
+
+        <div class="category-nav-dropdown">
+          <span class="other-categories-label">Explore Other:</span>
+          <div class="category-switch-pills">
+            <a href="/portfolio/creative-ads" class="cat-switch-link">Creative Ads</a>
+            <a href="/portfolio/video-ads" class="cat-switch-link">Video Ads</a>
+            <a href="/portfolio/website-creatives" class="cat-switch-link">Web Creatives</a>
+            <a href="/portfolio/illustration" class="cat-switch-link">Illustration</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Gallery Grid -->
+      <div id="gallery-container" class="gallery-grid">
+        <!-- Rendered by portfolio-data.js -->
+      </div>
+
+      <!-- Maintainer Quick Guide for Rahul -->
+      <div class="designer-helper-box">
+        <div class="helper-icon">📦</div>
+        <div class="helper-text">
+          <h4>Customizing Print Media Projects</h4>
+          <p>
+            Add packaging mockups, book layouts, brochures, and posters into <code>portfolio/portfolio-data.js</code> under <code>printMedia</code>. The gallery uses 3:4 portrait aspect ratios to preserve the elegance of your print designs without awkward cropping.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bottom CTA -->
+  <section class="portfolio-bottom-cta">
+    <div class="container">
+      <div class="cta-box">
+        <span class="cta-badge">PRINT & PACKAGING</span>
+        <h2 class="cta-title">Need Tactile, High-End Print Collateral?</h2>
+        <p class="cta-desc">
+          From luxury product packaging to bespoke coffee-table books, let's create tangible print design that leaves a lasting impression.
+        </p>
+        <a href="mailto:rahiviper45@gmail.com" class="btn-orange-cta">
+          <span>Discuss Print Project</span>
+          <span>↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="portfolio-footer">
+    <div class="container footer-content">
+      <div>© 2024 Rahul. All rights reserved. Professional Graphic Designer.</div>
+      <div>
+        <a href="/#home" style="color:var(--text-muted); text-decoration:none; margin-right: 1.5rem;">Home</a>
+        <a href="/#projects" style="color:var(--accent-orange); text-decoration:none;">Selected Work</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox / Project Detail Modal -->
+  <div id="project-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="modal-media-area"></div>
+      <div class="modal-body">
+        <div class="modal-tag"></div>
+        <h2 class="modal-title"></h2>
+        <p class="modal-desc"></p>
+        <div class="modal-meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Client</span>
+            <span class="meta-value modal-client-val"></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Year</span>
+            <span class="meta-value modal-year-val"></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Print Specs</span>
+            <span class="meta-value modal-category-val"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/portfolio/portfolio-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initPortfolioGallery('printMedia');
+    });
+  </script>
+</body>
+</html>

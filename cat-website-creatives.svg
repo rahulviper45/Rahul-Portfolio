@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141724"/>
+      <stop offset="100%" stop-color="#0b0c12"/>
+    </linearGradient>
+    <linearGradient id="wc-banner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f2336"/>
+      <stop offset="100%" stop-color="#12141f"/>
+    </linearGradient>
+    <linearGradient id="wc-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6026"/>
+      <stop offset="100%" stop-color="#ffa034"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="520" height="320" rx="16" fill="url(#wc-bg)"/>
+
+  <!-- Browser Window Mockup -->
+  <g transform="translate(30, 25)">
+    <!-- Browser Chrome -->
+    <rect width="460" height="260" rx="12" fill="url(#wc-banner)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" filter="drop-shadow(0 20px 40px rgba(0,0,0,0.6))"/>
+    <rect width="460" height="34" rx="12" fill="#181b2a"/>
+    <rect y="22" width="460" height="12" fill="#181b2a"/>
+    
+    <!-- Browser Dots -->
+    <circle cx="20" cy="17" r="4" fill="#ef4444"/>
+    <circle cx="34" cy="17" r="4" fill="#eab308"/>
+    <circle cx="48" cy="17" r="4" fill="#22c55e"/>
+
+    <!-- URL Bar -->
+    <rect x="70" y="9" width="180" height="16" rx="8" fill="#11131e"/>
+    <text x="85" y="21" font-family="'Inter', sans-serif" font-size="8" fill="#64748b">brand-experience.com</text>
+
+    <!-- Website Hero Banner Area -->
+    <rect x="18" y="48" width="424" height="135" rx="8" fill="#0f111a" stroke="rgba(255,96,38,0.2)"/>
+    
+    <!-- Banner Content Elements -->
+    <g transform="translate(35, 65)">
+      <rect width="80" height="10" rx="5" fill="rgba(255,96,38,0.3)"/>
+      <rect y="18" width="160" height="16" rx="4" fill="#ffffff"/>
+      <rect y="40" width="120" height="12" rx="3" fill="#ffffff"/>
+      <rect y="60" width="180" height="6" rx="2" fill="#64748b"/>
+      <rect y="70" width="140" height="6" rx="2" fill="#64748b"/>
+      
+      <!-- CTA Button in Mockup -->
+      <rect y="88" width="85" height="20" rx="10" fill="url(#wc-orange)"/>
+      <text x="14" y="101" font-family="'Inter', sans-serif" font-weight="700" font-size="8" fill="#ffffff">DISCOVER</text>
+    </g>
+
+    <!-- Visual 3D / Graphic in Banner -->
+    <g transform="translate(300, 60)">
+      <circle cx="65" cy="55" r="45" fill="url(#wc-orange)" opacity="0.15" filter="blur(15px)"/>
+      <circle cx="65" cy="55" r="35" fill="#181b29" stroke="url(#wc-orange)" stroke-width="2"/>
+      <polygon points="65,30 85,75 45,75" fill="url(#wc-orange)"/>
+    </g>
+
+    <!-- Mini Promo Banners Row -->
+    <g transform="translate(18, 195)">
+      <rect width="134" height="50" rx="6" fill="#151825" stroke="rgba(255,255,255,0.06)"/>
+      <circle cx="25" cy="25" r="10" fill="#ff6026"/>
+      <rect x="44" y="18" width="55" height="6" rx="2" fill="#ffffff"/>
+      <rect x="44" y="28" width="70" height="4" rx="1" fill="#64748b"/>
+
+      <rect x="145" y="0" width="134" height="50" rx="6" fill="#151825" stroke="rgba(255,255,255,0.06)"/>
+      <circle cx="170" cy="25" r="10" fill="#38bdf8"/>
+      <rect x="189" y="18" width="60" height="6" rx="2" fill="#ffffff"/>
+      <rect x="189" y="28" width="70" height="4" rx="1" fill="#64748b"/>
+
+      <rect x="290" y="0" width="134" height="50" rx="6" fill="#151825" stroke="rgba(255,255,255,0.06)"/>
+      <circle cx="315" cy="25" r="10" fill="#a855f7"/>
+      <rect x="334" y="18" width="50" height="6" rx="2" fill="#ffffff"/>
+      <rect x="334" y="28" width="70" height="4" rx="1" fill="#64748b"/>
+    </g>
+  </g>
+</svg>

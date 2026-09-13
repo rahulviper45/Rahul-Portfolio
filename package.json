@@ -1,0 +1,23 @@
+{
+  "name": "rahul-portfolio",
+  "version": "1.0.0",
+  "description": "Rahul Verma - Graphic Designer & Visual Artist Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "graphic-designer",
+    "design",
+    "visual-artist",
+    "creative",
+    "advertising",
+    "motion-graphics",
+    "print-media",
+    "illustration"
+  ],
+  "author": "Rahul Verma <rahiviper45@gmail.com>",
+  "license": "MIT"
+}

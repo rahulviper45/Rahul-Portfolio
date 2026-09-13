@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Illustration // Rahul Graphic Designer Portfolio</title>
+  <meta name="description" content="Original digital illustrations and visual artwork created to bring ideas, stories, and concepts to life by Rahul." />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/portfolio/portfolio.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="portfolio-header">
+    <div class="container portfolio-nav">
+      <a href="/#home" class="nav-brand">
+        <img src="/viper-logo.png" alt="Rahul Viper Logo" class="viper-brand-icon" />
+        <span class="brand-text">RAHUL</span>
+      </a>
+
+      <div class="nav-actions">
+        <a href="/#projects" class="back-btn">
+          <span class="back-arrow">←</span>
+          <span>Back to Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Hero Section -->
+  <section class="category-hero">
+    <div class="container">
+      <div class="category-hero-content">
+        <div class="category-badge-pill">
+          <span class="badge-dot"></span>
+          <span>CATEGORY 05 // DIGITAL ARTWORK</span>
+        </div>
+        <h1 class="category-main-title">Illustration</h1>
+        <p class="category-main-subtitle">
+          Original digital illustrations and visual artwork created to bring ideas, stories, and concepts to life.
+        </p>
+
+        <div class="category-meta-bar">
+          <div class="meta-item">
+            <span class="meta-label">Styles</span>
+            <span class="meta-value">Vector Art, Character Study, Cyberpunk, Surrealism</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Creative Medium</span>
+            <span class="meta-value">Digital Stylus, Vector Curves, Texture Overlays</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Software</span>
+            <span class="meta-value">Illustrator, Photoshop, Procreate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Main Section -->
+  <main class="gallery-section">
+    <div class="container">
+      
+      <!-- Filter and Category Switcher -->
+      <div class="category-filter-section">
+        <div class="filter-tags">
+          <button class="filter-pill active" data-filter="all">All Artworks</button>
+          <button class="filter-pill" data-filter="featured">Featured Art</button>
+          <button class="filter-pill" data-filter="character">Character Art</button>
+          <button class="filter-pill" data-filter="vector">Vector</button>
+          <button class="filter-pill" data-filter="surrealism">Surrealism</button>
+        </div>
+
+        <div class="category-nav-dropdown">
+          <span class="other-categories-label">Explore Other:</span>
+          <div class="category-switch-pills">
+            <a href="/portfolio/creative-ads" class="cat-switch-link">Creative Ads</a>
+            <a href="/portfolio/video-ads" class="cat-switch-link">Video Ads</a>
+            <a href="/portfolio/print-media" class="cat-switch-link">Print Media</a>
+            <a href="/portfolio/website-creatives" class="cat-switch-link">Web Creatives</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Gallery Grid -->
+      <div id="gallery-container" class="gallery-grid">
+        <!-- Rendered by portfolio-data.js -->
+      </div>
+
+      <!-- Maintainer Quick Guide for Rahul -->
+      <div class="designer-helper-box">
+        <div class="helper-icon">🎨</div>
+        <div class="helper-text">
+          <h4>Showcasing Your Artwork</h4>
+          <p>
+            Upload your illustrations into your assets directory, then add each piece in <code>portfolio/portfolio-data.js</code> under <code>illustration</code>. Clicking any artwork opens the high-resolution lightbox viewer.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bottom CTA -->
+  <section class="portfolio-bottom-cta">
+    <div class="container">
+      <div class="cta-box">
+        <span class="cta-badge">BESPOKE ARTWORK</span>
+        <h2 class="cta-title">Commission a Custom Illustration</h2>
+        <p class="cta-desc">
+          Need distinctive cover art, character design, editorial spot illustrations, or brand mascot artwork? Let's bring your vision to life.
+        </p>
+        <a href="mailto:rahiviper45@gmail.com" class="btn-orange-cta">
+          <span>Commission Artwork</span>
+          <span>↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="portfolio-footer">
+    <div class="container footer-content">
+      <div>© 2024 Rahul. All rights reserved. Professional Graphic Designer.</div>
+      <div>
+        <a href="/#home" style="color:var(--text-muted); text-decoration:none; margin-right: 1.5rem;">Home</a>
+        <a href="/#projects" style="color:var(--accent-orange); text-decoration:none;">Selected Work</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox / Project Detail Modal -->
+  <div id="project-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-container" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="modal-media-area"></div>
+      <div class="modal-body">
+        <div class="modal-tag"></div>
+        <h2 class="modal-title"></h2>
+        <p class="modal-desc"></p>
+        <div class="modal-meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Client / Type</span>
+            <span class="meta-value modal-client-val"></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Year</span>
+            <span class="meta-value modal-year-val"></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Art Medium</span>
+            <span class="meta-value modal-category-val"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/portfolio/portfolio-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initPortfolioGallery('illustration');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul // Graphic Designer Portfolio</title>
+  <meta name="description" content="Hi, I'm Rahul. I'm a Graphic Designer focused on creating bold, engaging visuals, brand identities, and digital experiences that connect with people." />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="is-loading">
+
+  <!-- Subtle Minimal Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-bar">
+        <div id="preloader-fill" class="preloader-fill"></div>
+      </div>
+      <div id="preloader-text" class="preloader-text">Loading portfolio... 0%</div>
+    </div>
+  </div>
+
+  <!-- Pinned Fullscreen Background Canvas -->
+  <div class="canvas-container">
+    <canvas id="scroll-canvas"></canvas>
+    <div class="canvas-overlay"></div>
+  </div>
+
+  <!-- Main Website Content -->
+  <div class="site-wrapper">
+
+    <!-- Header / Navigation Bar -->
+    <header class="navbar">
+      <div class="nav-container">
+        <!-- Brand with Front-Facing Viper Logo -->
+        <a href="#home" class="nav-brand">
+          <img src="viper-logo.png" alt="Rahul Viper Logo" class="viper-brand-icon" />
+          <span class="brand-text">RAHUL</span>
+        </a>
+
+        <nav class="nav-menu">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#blog" class="nav-link">Blog</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <a href="#contact" class="btn-orange btn-nav">
+          <span>Hire Me</span>
+          <span class="arrow-up-right">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section: Graphic Designer Focus -->
+      <section class="hero-section" id="home">
+        <!-- Hero Dynamic Background Image with Cinematic Scroll Animation -->
+        <div class="hero-bg-container" id="hero-bg-container">
+          <img src="Profile photo.png" alt="Rahul Graphic Designer Background" class="hero-bg-image" id="hero-bg-image" />
+          <div class="hero-bg-scrim"></div>
+          <div class="hero-bg-bottom-fade"></div>
+        </div>
+
+        <div class="container hero-grid">
+          
+          <!-- Hero Left Column -->
+          <div class="hero-content">
+            <!-- Badge -->
+            <div class="badge-pill">
+              <span>I'M A GRAPHIC DESIGNER</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title">
+              Hi, I'm <span class="highlight-orange">Rahul</span><br/>
+              I create visuals that make brands stand out.
+            </h1>
+
+            <!-- Subheading -->
+            <p class="hero-description">
+              I'm a Graphic Designer focused on creating bold, engaging visuals, brand identities, and digital experiences that connect with people.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta-row">
+              <a href="#projects" class="btn-orange">
+                <span>View My Work</span>
+                <span class="arrow-up-right">↗</span>
+              </a>
+              <a href="#contact" class="btn-outline">
+                <span>Download CV</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Creative Tools Row -->
+            <div class="tech-stack-wrap">
+              <div class="tech-stack-label">TOOLS I WORK WITH</div>
+              <div class="tech-stack-icons">
+                
+                <!-- 1. Adobe Photoshop -->
+                <div class="tech-badge-icon icon-ps" title="Adobe Photoshop">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#001e36"/>
+                    <path d="M5.5 7.2h4.5c1.8 0 3 1 3 2.5s-1.2 2.6-3 2.6h-2.3v4.5H5.5V7.2zm2.2 3.4h2.1c.7 0 1.1-.3 1.1-.9 0-.6-.4-.9-1.1-.9H7.7v1.8z" fill="#31a8ff"/>
+                    <path d="M14.2 13.9c.6.4 1.4.7 2.2.7.9 0 1.4-.4 1.4-.9 0-.5-.5-.8-1.5-1.1-1.5-.4-2.3-1-2.3-2.1 0-1.4 1.2-2.3 2.8-2.3.9 0 1.6.2 2.2.5l-.5 1.5c-.5-.3-1.1-.5-1.7-.5-.7 0-1.1.3-1.1.8 0 .5.5.7 1.5 1.1 1.5.5 2.3 1 2.3 2.2 0 1.5-1.2 2.4-3 2.4-.9 0-1.9-.3-2.6-.8l.3-1.5z" fill="#31a8ff"/>
+                  </svg>
+                </div>
+
+                <!-- 2. Adobe Illustrator -->
+                <div class="tech-badge-icon icon-ai" title="Adobe Illustrator">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#330000"/>
+                    <path d="M5.8 16.8l3.6-9.6h1.8l3.6 9.6h-2.2l-.8-2.3H8.2l-.8 2.3H5.8zm2.9-3.9h2.4L10 9.8h-.1l-1.2 3.1z" fill="#ff9a00"/>
+                    <circle cx="17.5" cy="7.9" r="1.1" fill="#ff9a00"/>
+                    <path d="M16.5 10.2h2.1v6.6h-2.1v-6.6z" fill="#ff9a00"/>
+                  </svg>
+                </div>
+
+                <!-- 3. Adobe Premiere Pro -->
+                <div class="tech-badge-icon icon-pr" title="Adobe Premiere Pro">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#00005b"/>
+                    <path d="M5.5 7.2h4.5c1.8 0 3 1 3 2.5s-1.2 2.6-3 2.6h-2.3v4.5H5.5V7.2zm2.2 3.4h2.1c.7 0 1.1-.3 1.1-.9 0-.6-.4-.9-1.1-.9H7.7v1.8z" fill="#ea77ff"/>
+                    <path d="M14.2 10.2h1.9v1.2h.1c.4-.8 1.2-1.3 2.1-1.3.4 0 .7.1.9.2l-.5 1.9c-.3-.1-.6-.2-.9-.2-1.1 0-1.6.8-1.6 2.1v2.7h-2V10.2z" fill="#ea77ff"/>
+                  </svg>
+                </div>
+
+                <!-- 4. Adobe After Effects -->
+                <div class="tech-badge-icon icon-ae" title="Adobe After Effects">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#00005b"/>
+                    <path d="M5.2 16.8l3.4-9.6h1.7l3.4 9.6h-2.1l-.8-2.3H7.4l-.7 2.3H5.2zm2.8-3.9h2.1L9.1 9.8H9l-1 3.1z" fill="#9999ff"/>
+                    <path d="M13.8 13.5c0-1.9 1.3-3.4 3.4-3.4 2.2 0 3.2 1.7 3.2 3.4v.5h-4.6c.1.9.7 1.4 1.7 1.4.7 0 1.4-.3 1.8-.7l1 1.1c-.6.7-1.7 1.1-2.9 1.1-2.3 0-3.6-1.5-3.6-3.4zm4.7-.8c-.1-.7-.5-1.2-1.4-1.2-.8 0-1.4.5-1.5 1.2h2.9z" fill="#9999ff"/>
+                  </svg>
+                </div>
+
+                <!-- 5. Blender -->
+                <div class="tech-badge-icon icon-blender" title="Blender 3D">
+                  <svg width="24" height="24" viewBox="0 0 256 208" fill="none">
+                    <rect width="256" height="208" rx="40" fill="#181a24"/>
+                    <path fill="#ea7600" d="M128 10c-9 0-17 4-22 12l-75 106c-8-4-17-7-26-7-4 0-8 0-12 1 1 2 2 3 3 5l89 65c14 10 32 16 50 16 48 0 88-39 88-88 0-16-4-31-12-44l42-30c8-6 10-17 4-25s-17-10-25-4l-38 27V25c0-8-7-15-15-15h-1z"/>
+                    <circle fill="#ffffff" cx="135" cy="120" r="44"/>
+                    <circle fill="#2563eb" cx="135" cy="120" r="30"/>
+                    <circle fill="#ffffff" cx="127" cy="112" r="9"/>
+                  </svg>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right Spacer: Leaves right side open so Rahul in background is unobscured -->
+          <div class="hero-right-spacer" aria-hidden="true"></div>
+
+        </div>
+      </section>
+
+      <!-- About Me Section -->
+      <section class="about-section" id="about">
+        <div class="container about-grid">
+          
+          <!-- About Left Text -->
+          <div class="about-content">
+            <div class="badge-pill">
+              <span>ABOUT ME</span>
+            </div>
+            <h2 class="section-title">
+              I'm passionate about turning ideas into powerful visuals
+            </h2>
+            <p class="section-text">
+              With 6+ years of experience in graphic design, I create bold, engaging, and visually compelling designs that help brands communicate, connect, and stand out.
+            </p>
+            <a href="#projects" class="btn-outline">
+              <span>View My Work</span>
+              <span class="arrow-up-right">↗</span>
+            </a>
+          </div>
+
+          <!-- About Right Stats Grid (2x2) -->
+          <div class="stats-grid">
+            
+            <div class="stat-card">
+              <div class="stat-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">6+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Happy Clients</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Client Satisfaction</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="skills-section" id="skills">
+        <div class="container">
+          <div class="section-header-center">
+            <div class="badge-pill">
+              <span>MY SKILLS</span>
+            </div>
+            <h2 class="section-title">Creative Tools I Master</h2>
+          </div>
+
+          <div class="skills-grid-creative">
+            
+            <!-- 1. Adobe Photoshop -->
+            <div class="skill-item">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <span class="skill-icon icon-ps">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <rect width="24" height="24" rx="5" fill="#001e36"/>
+                      <path d="M5.5 7.2h4.5c1.8 0 3 1 3 2.5s-1.2 2.6-3 2.6h-2.3v4.5H5.5V7.2zm2.2 3.4h2.1c.7 0 1.1-.3 1.1-.9 0-.6-.4-.9-1.1-.9H7.7v1.8z" fill="#31a8ff"/>
+                      <path d="M14.2 13.9c.6.4 1.4.7 2.2.7.9 0 1.4-.4 1.4-.9 0-.5-.5-.8-1.5-1.1-1.5-.4-2.3-1-2.3-2.1 0-1.4 1.2-2.3 2.8-2.3.9 0 1.6.2 2.2.5l-.5 1.5c-.5-.3-1.1-.5-1.7-.5-.7 0-1.1.3-1.1.8 0 .5.5.7 1.5 1.1 1.5.5 2.3 1 2.3 2.2 0 1.5-1.2 2.4-3 2.4-.9 0-1.9-.3-2.6-.8l.3-1.5z" fill="#31a8ff"/>
+                    </svg>
+                  </span>
+                  <span class="skill-name">Adobe Photoshop</span>
+                </div>
+                <span class="skill-percentage">95%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-skill-level="95%" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <!-- 2. Adobe Illustrator -->
+            <div class="skill-item">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <span class="skill-icon icon-ai">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <rect width="24" height="24" rx="5" fill="#330000"/>
+                      <path d="M5.8 16.8l3.6-9.6h1.8l3.6 9.6h-2.2l-.8-2.3H8.2l-.8 2.3H5.8zm2.9-3.9h2.4L10 9.8h-.1l-1.2 3.1z" fill="#ff9a00"/>
+                      <circle cx="17.5" cy="7.9" r="1.1" fill="#ff9a00"/>
+                      <path d="M16.5 10.2h2.1v6.6h-2.1v-6.6z" fill="#ff9a00"/>
+                    </svg>
+                  </span>
+                  <span class="skill-name">Adobe Illustrator</span>
+                </div>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-skill-level="90%" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <!-- 3. Adobe Premiere Pro -->
+            <div class="skill-item">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <span class="skill-icon icon-pr">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <rect width="24" height="24" rx="5" fill="#00005b"/>
+                      <path d="M5.5 7.2h4.5c1.8 0 3 1 3 2.5s-1.2 2.6-3 2.6h-2.3v4.5H5.5V7.2zm2.2 3.4h2.1c.7 0 1.1-.3 1.1-.9 0-.6-.4-.9-1.1-.9H7.7v1.8z" fill="#ea77ff"/>
+                      <path d="M14.2 10.2h1.9v1.2h.1c.4-.8 1.2-1.3 2.1-1.3.4 0 .7.1.9.2l-.5 1.9c-.3-.1-.6-.2-.9-.2-1.1 0-1.6.8-1.6 2.1v2.7h-2V10.2z" fill="#ea77ff"/>
+                    </svg>
+                  </span>
+                  <span class="skill-name">Adobe Premiere Pro</span>
+                </div>
+                <span class="skill-percentage">95%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-skill-level="95%" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <!-- 4. Adobe After Effects -->
+            <div class="skill-item">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <span class="skill-icon icon-ae">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <rect width="24" height="24" rx="5" fill="#00005b"/>
+                      <path d="M5.2 16.8l3.4-9.6h1.7l3.4 9.6h-2.1l-.8-2.3H7.4l-.7 2.3H5.2zm2.8-3.9h2.1L9.1 9.8H9l-1 3.1z" fill="#9999ff"/>
+                      <path d="M13.8 13.5c0-1.9 1.3-3.4 3.4-3.4 2.2 0 3.2 1.7 3.2 3.4v.5h-4.6c.1.9.7 1.4 1.7 1.4.7 0 1.4-.3 1.8-.7l1 1.1c-.6.7-1.7 1.1-2.9 1.1-2.3 0-3.6-1.5-3.6-3.4zm4.7-.8c-.1-.7-.5-1.2-1.4-1.2-.8 0-1.4.5-1.5 1.2h2.9z" fill="#9999ff"/>
+                    </svg>
+                  </span>
+                  <span class="skill-name">Adobe After Effects</span>
+                </div>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-skill-level="90%" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <!-- 5. Blender -->
+            <div class="skill-item">
+              <div class="skill-header">
+                <div class="skill-name-wrap">
+                  <span class="skill-icon icon-blender">
+                    <svg width="24" height="24" viewBox="0 0 256 208" fill="none">
+                      <rect width="256" height="208" rx="40" fill="#181a24"/>
+                      <path fill="#ea7600" d="M128 10c-9 0-17 4-22 12l-75 106c-8-4-17-7-26-7-4 0-8 0-12 1 1 2 2 3 3 5l89 65c14 10 32 16 50 16 48 0 88-39 88-88 0-16-4-31-12-44l42-30c8-6 10-17 4-25s-17-10-25-4l-38 27V25c0-8-7-15-15-15h-1z"/>
+                      <circle fill="#ffffff" cx="135" cy="120" r="44"/>
+                      <circle fill="#2563eb" cx="135" cy="120" r="30"/>
+                      <circle fill="#ffffff" cx="127" cy="112" r="9"/>
+                    </svg>
+                  </span>
+                  <span class="skill-name">Blender</span>
+                </div>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" data-skill-level="75%" style="width: 0%;"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects Section -->
+      <section class="projects-section" id="projects">
+        <div class="container">
+          <div class="section-header-center">
+            <div class="badge-pill">
+              <span>FEATURED PROJECTS</span>
+            </div>
+            <h2 class="section-title">Selected Creative Work</h2>
+            <p class="section-subtitle">A curated selection of creative work across advertising, video, print, digital experiences, and illustration.</p>
+          </div>
+
+          <div class="projects-category-grid">
+            
+            <!-- Category 01: Creative Ads -->
+            <a href="/portfolio/creative-ads" target="_blank" rel="noopener noreferrer" class="category-card" aria-label="Explore Creative Ads Portfolio">
+              <div class="category-preview-wrap">
+                <span class="category-index-pill">01</span>
+                <img src="creative-ads-cover.png" alt="Creative Ads - Zandu Shilajit Campaign" class="category-img" loading="lazy" />
+                <div class="category-overlay-glow"></div>
+              </div>
+              <div class="category-card-body">
+                <div class="category-tag-row">
+                  <span class="category-tag">ADVERTISING</span>
+                </div>
+                <h3 class="category-title">Creative Ads</h3>
+                <p class="category-desc">Bold visual campaigns and performance-driven creatives designed to capture attention and build brands.</p>
+                <div class="category-explore-link">
+                  <span>Explore Work</span>
+                  <span class="category-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Category 02: Video Ads -->
+            <a href="/portfolio/video-ads" target="_blank" rel="noopener noreferrer" class="category-card" aria-label="Explore Video Ads Portfolio">
+              <div class="category-preview-wrap">
+                <span class="category-index-pill">02</span>
+                <img src="video-ads-cover.png" alt="Video Ads - Zandu Good Gut Commercial Campaign" class="category-img" loading="lazy" />
+                <div class="category-video-play-btn" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+                <div class="category-overlay-glow"></div>
+              </div>
+              <div class="category-card-body">
+                <div class="category-tag-row">
+                  <span class="category-tag">MOTION & VIDEO</span>
+                </div>
+                <h3 class="category-title">Video Ads</h3>
+                <p class="category-desc">Engaging commercial video advertisements, motion graphics, and high-impact visual campaigns built for digital platforms.</p>
+                <div class="category-explore-link">
+                  <span>Explore Work</span>
+                  <span class="category-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Category 03: Print Media -->
+            <a href="/portfolio/print-media" target="_blank" rel="noopener noreferrer" class="category-card" aria-label="Explore Print Media Portfolio">
+              <div class="category-preview-wrap">
+                <span class="category-index-pill">03</span>
+                <img src="/Print Media/Leaflate.png" alt="Print Media - Happy Jars Product Leaflet & Retail Collateral" class="category-img" loading="lazy" />
+                <div class="category-overlay-glow"></div>
+              </div>
+              <div class="category-card-body">
+                <div class="category-tag-row">
+                  <span class="category-tag">EDITORIAL & PACKAGING</span>
+                </div>
+                <h3 class="category-title">Print Media</h3>
+                <p class="category-desc">Premium print designs including brochures, leaflets, retail shelf strips, packaging, and brand collateral.</p>
+                <div class="category-explore-link">
+                  <span>Explore Work</span>
+                  <span class="category-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Category 04: Website Creatives -->
+            <a href="/portfolio/website-creatives" target="_blank" rel="noopener noreferrer" class="category-card" aria-label="Explore Website Creatives Portfolio">
+              <div class="category-preview-wrap">
+                <span class="category-index-pill">04</span>
+                <img src="/Website Banners/Banners (3).png" alt="Website Creatives - Happy Jars E-Commerce Hero Banners" class="category-img" loading="lazy" />
+                <div class="category-overlay-glow"></div>
+              </div>
+              <div class="category-card-body">
+                <div class="category-tag-row">
+                  <span class="category-tag">DIGITAL & WEB VISUALS</span>
+                </div>
+                <h3 class="category-title">Website Creatives</h3>
+                <p class="category-desc">High-impact website banners, promotional hero visuals, and digital creatives designed for modern brand experiences.</p>
+                <div class="category-explore-link">
+                  <span>Explore Work</span>
+                  <span class="category-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Category 05: Illustration -->
+            <a href="/portfolio/illustration" target="_blank" rel="noopener noreferrer" class="category-card" aria-label="Explore Illustration Portfolio">
+              <div class="category-preview-wrap">
+                <span class="category-index-pill">05</span>
+                <img src="/Illustration/Illustration (5).png" alt="Illustration - Lunar Divide // Broken Heart Moon Silhouette" class="category-img" loading="lazy" />
+                <div class="category-overlay-glow"></div>
+              </div>
+              <div class="category-card-body">
+                <div class="category-tag-row">
+                  <span class="category-tag">DIGITAL ARTWORK</span>
+                </div>
+                <h3 class="category-title">Illustration</h3>
+                <p class="category-desc">Original digital vector illustrations, tribute character artwork, and creative concepts brought to life.</p>
+                <div class="category-explore-link">
+                  <span>Explore Work</span>
+                  <span class="category-arrow">→</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Grid Section (Contact + Testimonial + Socials) -->
+      <section class="bottom-section" id="contact">
+        <div class="container bottom-grid">
+          
+          <!-- Box 1: Let's Work Together -->
+          <div class="bottom-card contact-cta-card">
+            <div class="badge-pill-sm">
+              <span>LET'S WORK TOGETHER</span>
+            </div>
+            <h3 class="bottom-card-title">Have a project in mind?</h3>
+            <p class="bottom-card-desc">
+              I'm always open to discussing new projects and opportunities. Let's create something amazing together!
+            </p>
+            <a href="mailto:rahiviper45@gmail.com" class="btn-orange">
+              <span>Get In Touch</span>
+              <span class="arrow-up-right">↗</span>
+            </a>
+          </div>
+
+          <!-- Box 2: Testimonial -->
+          <div class="bottom-card testimonial-card">
+            <div class="quote-symbol">“</div>
+            <p class="quote-text">
+              Rahul is an exceptional designer who delivers high-quality work on time. His attention to detail and creative vision are outstanding.
+            </p>
+            <div class="author-info">
+              <div class="author-avatar">SJ</div>
+              <div class="author-details">
+                <div class="author-name">Sarah Johnson</div>
+                <div class="author-role">CEO, TechStart</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box 3: Follow Me & Contact Info -->
+          <div class="bottom-card follow-card">
+            <h4 class="follow-label">FOLLOW ME</h4>
+            
+            <div class="social-icons-row">
+              <!-- Behance -->
+              <a href="https://www.behance.net/rahulviper20" target="_blank" rel="noopener noreferrer" class="social-btn" title="Behance" aria-label="Rahul Verma on Behance">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-4.274 0-6.625-3.023-6.625-6.851 0-4.109 2.597-7.149 6.66-7.149 4.148 0 6.166 3.061 5.922 6.643h-9.754c.05 2.502 1.638 4.606 4.184 4.606 1.705 0 3.03-.984 3.488-2.249h1.226zm-9.062-5.698h6.883c-.092-2.124-1.391-3.693-3.414-3.693-2.083 0-3.376 1.547-3.469 3.693zm-8.664-5.302h4.526c2.518 0 4.135 1.282 4.135 3.398 0 1.341-.758 2.457-1.928 2.977 1.488.475 2.391 1.758 2.391 3.42 0 2.452-1.967 3.905-4.605 3.905h-4.519v-13.7zm2.639 5.485h1.777c1.222 0 2.031-.621 2.031-1.637 0-.992-.78-1.574-1.977-1.574h-1.831v3.211zm0 5.834h1.945c1.336 0 2.246-.693 2.246-1.836 0-1.121-.902-1.789-2.23-1.789h-1.961v3.625z"/>
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/rahul-verma-0b248a246/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn" aria-label="Rahul Verma on LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.65 1.65 0 1 0 0-3.3 1.65 1.65 0 0 0 0 3.3m1.4 9.74V9.92H5.06v8.58h2.8z"/>
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/rahulviper20/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram" aria-label="Rahul Verma on Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <!-- WhatsApp -->
+              <a href="https://wa.me/918468870826" target="_blank" rel="noopener noreferrer" class="social-btn" title="WhatsApp Chat" aria-label="Chat with Rahul on WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+              </a>
+            </div>
+
+            <div class="contact-details">
+              <!-- Email -->
+              <div class="contact-line">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6026" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <a href="mailto:rahiviper45@gmail.com">rahiviper45@gmail.com</a>
+              </div>
+
+              <!-- Mobile No -->
+              <div class="contact-line">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6026" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <a href="tel:+919717963966">+91 97179 63966</a>
+              </div>
+
+              <!-- WhatsApp Contact -->
+              <div class="contact-line">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <a href="https://wa.me/918468870826" target="_blank" rel="noopener noreferrer">+91 84688 70826 (WhatsApp)</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <div class="footer-copy">© 2024 Rahul. All rights reserved.</div>
+        <div class="footer-credit">Made with <span class="heart">❤️</span> by Rahul</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
