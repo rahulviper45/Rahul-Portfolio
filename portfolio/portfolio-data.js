@@ -415,6 +415,7 @@ const PORTFOLIO_DATA = {
 // ========================================================================
 
 function initPortfolioGallery(categoryKey) {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
   const container = document.getElementById('gallery-container');
   if (!container) return;
 
@@ -519,6 +520,7 @@ function initPortfolioGallery(categoryKey) {
 
 // Modal handling
 function openModal(project, isVideo) {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
   const modal = document.getElementById('project-modal');
   if (!modal) return;
 
@@ -554,6 +556,7 @@ function openModal(project, isVideo) {
 }
 
 function closeModal() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
   const modal = document.getElementById('project-modal');
   if (!modal) return;
 
@@ -569,20 +572,26 @@ function closeModal() {
 }
 
 // Setup modal event listeners
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('project-modal');
-  if (!modal) return;
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('project-modal');
+    if (!modal) return;
 
-  const closeBtn = modal.querySelector('.modal-close-btn');
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    const closeBtn = modal.querySelector('.modal-close-btn');
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
   });
+}
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-      closeModal();
-    }
-  });
-});
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { PORTFOLIO_DATA, initPortfolioGallery, openModal, closeModal };
+}

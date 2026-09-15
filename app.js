@@ -1,21 +1,22 @@
 /**
- * CodeCraft // Alex - Web Developer Portfolio
+ * Rahul Verma - Graphic Designer & Visual Artist Portfolio
  * Canvas 2D background scroll animation engine with smooth lerp physics
  */
 
-(function () {
-  'use strict';
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  (function () {
+    'use strict';
 
-  const TOTAL_FRAMES = 300;
-  const FRAME_DIR = 'ezgif-497d03a4f9f2ffef-jpg';
-  const FRAME_PREFIX = 'ezgif-frame-';
-  const LERP_FACTOR = 0.12;
+    const TOTAL_FRAMES = 300;
+    const FRAME_DIR = 'ezgif-497d03a4f9f2ffef-jpg';
+    const FRAME_PREFIX = 'ezgif-frame-';
+    const LERP_FACTOR = 0.12;
 
-  const preloader = document.getElementById('preloader');
-  const preloaderFill = document.getElementById('preloader-fill');
-  const preloaderText = document.getElementById('preloader-text');
-  const canvas = document.getElementById('scroll-canvas');
-  const ctx = canvas.getContext('2d', { alpha: false });
+    const preloader = document.getElementById('preloader');
+    const preloaderFill = document.getElementById('preloader-fill');
+    const preloaderText = document.getElementById('preloader-text');
+    const canvas = document.getElementById('scroll-canvas');
+    const ctx = canvas ? canvas.getContext('2d', { alpha: false }) : null;
 
   const frames = new Array(TOTAL_FRAMES);
   let loadedFramesCount = 0;
@@ -146,8 +147,8 @@
   let targetMouseY = 0;
 
   // Global Smooth Scroll with Inertia / Momentum (Lenis / Locomotive style)
-  let targetScrollY = window.scrollY;
-  let currentScrollY = window.scrollY;
+  let targetScrollY = typeof window !== 'undefined' ? window.scrollY : 0;
+  let currentScrollY = typeof window !== 'undefined' ? window.scrollY : 0;
   // 0.085 lerp factor generates an ~0.8s ease-out fluid natural deceleration
   const SCROLL_LERP = 0.085;
 
@@ -458,3 +459,4 @@
     init();
   }
 })();
+}
