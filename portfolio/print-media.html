@@ -11,6 +11,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Theme Initialization (Prevents FOUC) -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="stylesheet" href="/portfolio/portfolio.css" />
 </head>
 <body>
@@ -19,11 +33,31 @@
   <header class="portfolio-header">
     <div class="container portfolio-nav">
       <a href="/#home" class="nav-brand">
-        <img src="/viper-logo.png" alt="Rahul Viper Logo" class="viper-brand-icon" />
+        <img src="/35852362_16juli22angga_61.png" alt="Rahul Viper Logo" class="viper-brand-icon logo-dark" />
+        <img src="/viper-logo.png" alt="Rahul Viper Logo" class="viper-brand-icon logo-light" />
         <span class="brand-text">RAHUL</span>
       </a>
 
       <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <!-- Sun Icon (visible in dark mode) -->
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (visible in light mode) -->
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
         <a href="/#projects" class="back-btn">
           <span class="back-arrow">←</span>
           <span>Back to Portfolio</span>
@@ -135,28 +169,30 @@
     </div>
   </footer>
 
-  <!-- Lightbox / Project Detail Modal -->
-  <div id="project-modal" class="modal-backdrop" aria-hidden="true">
-    <div class="modal-container" role="dialog" aria-modal="true">
-      <button class="modal-close-btn" aria-label="Close modal">✕</button>
-      <div class="modal-media-area"></div>
-      <div class="modal-body">
-        <div class="modal-tag"></div>
-        <h2 class="modal-title"></h2>
-        <p class="modal-desc"></p>
-        <div class="modal-meta-grid">
-          <div class="meta-item">
-            <span class="meta-label">Client</span>
-            <span class="meta-value modal-client-val"></span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Year</span>
-            <span class="meta-value modal-year-val"></span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Print Specs</span>
-            <span class="meta-value modal-category-val"></span>
-          </div>
+  <!-- Full-Screen Gallery Lightbox Modal -->
+  <div id="project-modal" class="modal-backdrop gallery-lightbox" aria-hidden="true">
+    <!-- Top-Right Close Button -->
+    <button class="lightbox-close-btn" id="modal-close-btn" aria-label="Close full-screen preview" title="Close (Esc)">✕</button>
+
+    <!-- Prev & Next Gallery Navigation Buttons -->
+    <button class="lightbox-nav-btn lightbox-prev-btn" id="modal-prev-btn" aria-label="Previous artwork (Left Arrow)" title="Previous (Left Arrow)">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    
+    <button class="lightbox-nav-btn lightbox-next-btn" id="modal-next-btn" aria-label="Next artwork (Right Arrow)" title="Next (Right Arrow)">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Lightbox Centered Stage (Clicking backdrop outside card closes modal) -->
+    <div class="lightbox-stage" id="modal-stage">
+      <div class="lightbox-card-wrapper" id="modal-card-wrapper" role="dialog" aria-modal="true">
+        <div class="lightbox-media-area" id="modal-media-area"></div>
+        <div class="lightbox-caption-bar" id="modal-caption-bar">
+          <h2 class="lightbox-title" id="modal-title">Creative Campaign Title</h2>
         </div>
       </div>
     </div>

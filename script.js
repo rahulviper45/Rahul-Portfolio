@@ -291,23 +291,12 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
             animateStatsCount(entry.target);
           }
 
-          // Skills horizontal progress bar animation from 0% to respective value
-          if (entry.target.classList.contains('skills-grid-creative')) {
-            const fills = entry.target.querySelectorAll('.skill-bar-fill');
-            fills.forEach(fill => {
-              const level = fill.getAttribute('data-skill-level');
-              if (level) {
-                fill.style.width = level;
-              }
-            });
-          }
-
           observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-    const targets = document.querySelectorAll('.stats-grid, .skills-grid-creative, .projects-category-grid, .bottom-grid');
+    const targets = document.querySelectorAll('.stats-grid, .projects-category-grid, .roadmap-timeline, .bottom-grid');
     targets.forEach(el => {
       if (el) revealObserver.observe(el);
     });
@@ -374,28 +363,28 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
 
         const sp = currentHeroScroll;
         
-        // Cinematic Parallax: background moves slower than scroll
-        const parallaxY = sp * 130; 
+        // Cinematic Parallax: portrait gently floats down as user scrolls
+        const parallaxY = sp * 35; 
         
-        // Cinematic Zoom: subtle camera zoom-in effect as you scroll
-        const zoom = 1 + sp * 0.12; 
+        // Subtle depth scale
+        const zoom = 1 + sp * 0.03; 
         
-        // Smooth fade-out starting at 35% hero scroll, fully faded out at 100%
+        // Smooth fade-out starting at 40% hero scroll, fully faded out at 100%
         let opacity = 1;
-        if (sp > 0.35) {
-          const fadeP = (sp - 0.35) / 0.65;
+        if (sp > 0.40) {
+          const fadeP = (sp - 0.40) / 0.60;
           const ease = fadeP * fadeP * (3 - 2 * fadeP); // smoothstep
           opacity = Math.max(0, 1 - ease);
         }
 
-        // Soft depth-of-field blur as the background recedes into the dark canvas
-        const blur = sp > 0.45 ? (sp - 0.45) * 12 : 0;
+        // Soft depth-of-field blur as the portrait recedes
+        const blur = sp > 0.55 ? (sp - 0.55) * 10 : 0;
 
-        // Apply scroll fade opacity once scroll starts or loaded
+        // Apply scroll fade opacity once loaded
         if (heroBgContainer.classList.contains('is-loaded')) {
           heroBgContainer.style.opacity = opacity.toFixed(4);
         }
-        heroBgImage.style.filter = blur > 0.2 ? `blur(${blur.toFixed(1)}px)` : 'none';
+        heroBgImage.style.filter = blur > 0.2 ? `blur(${blur.toFixed(1)}px)` : '';
 
         // Combined transform: parallax translateY + mouse float + camera zoom
         const totalX = currentMouseX.toFixed(2);
@@ -432,8 +421,37 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     }, { passive: true });
   }
 
+  function setupThemeToggle() {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    if (!themeToggleBtn) return;
+
+    function updateAriaLabel(theme) {
+      const label = theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme';
+      themeToggleBtn.setAttribute('aria-label', label);
+      themeToggleBtn.setAttribute('title', label);
+    }
+
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    updateAriaLabel(currentTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const targetTheme = activeTheme === 'light' ? 'dark' : 'light';
+
+      document.documentElement.setAttribute('data-theme', targetTheme);
+      updateAriaLabel(targetTheme);
+
+      try {
+        localStorage.setItem('portfolio-theme', targetTheme);
+      } catch (e) {
+        console.warn('Could not save theme preference:', e);
+      }
+    });
+  }
+
   // Initialization
   function init() {
+    setupThemeToggle();
     resizeCanvas();
     preloadImages();
     setupSmoothScroll();

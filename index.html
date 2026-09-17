@@ -11,6 +11,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Theme Initialization (Prevents FOUC) -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="is-loading">
@@ -39,36 +53,51 @@
       <div class="nav-container">
         <!-- Brand with Front-Facing Viper Logo -->
         <a href="#home" class="nav-brand">
-          <img src="viper-logo.png" alt="Rahul Viper Logo" class="viper-brand-icon" />
+          <img src="35852362_16juli22angga_61.png" alt="Rahul Viper Logo" class="viper-brand-icon logo-dark" />
+          <img src="viper-logo.png" alt="Rahul Viper Logo" class="viper-brand-icon logo-light" />
           <span class="brand-text">RAHUL</span>
         </a>
 
         <nav class="nav-menu">
           <a href="#home" class="nav-link active">Home</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#skills" class="nav-link">Skills</a>
           <a href="#projects" class="nav-link">Projects</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#experience" class="nav-link">Experience</a>
           <a href="#blog" class="nav-link">Blog</a>
           <a href="#contact" class="nav-link">Contact</a>
         </nav>
 
-        <a href="#contact" class="btn-orange btn-nav">
-          <span>Hire Me</span>
-          <span class="arrow-up-right">↗</span>
-        </a>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Toggle theme">
+            <!-- Sun Icon (visible in dark mode) -->
+            <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon Icon (visible in light mode) -->
+            <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <a href="#contact" class="btn-orange btn-nav">
+            <span>Hire Me</span>
+            <span class="arrow-up-right">↗</span>
+          </a>
+        </div>
       </div>
     </header>
 
     <main>
       <!-- Hero Section: Graphic Designer Focus -->
       <section class="hero-section" id="home">
-        <!-- Hero Dynamic Background Image with Cinematic Scroll Animation -->
-        <div class="hero-bg-container" id="hero-bg-container">
-          <img src="Profile photo.png" alt="Rahul Graphic Designer Background" class="hero-bg-image" id="hero-bg-image" />
-          <div class="hero-bg-scrim"></div>
-          <div class="hero-bg-bottom-fade"></div>
-        </div>
-
         <div class="container hero-grid">
           
           <!-- Hero Left Column -->
@@ -97,10 +126,10 @@
               </a>
               <a href="#contact" class="btn-outline">
                 <span>Download CV</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
                 </svg>
               </a>
             </div>
@@ -162,214 +191,17 @@
             </div>
           </div>
 
-          <!-- Hero Right Spacer: Leaves right side open so Rahul in background is unobscured -->
-          <div class="hero-right-spacer" aria-hidden="true"></div>
-
-        </div>
-      </section>
-
-      <!-- About Me Section -->
-      <section class="about-section" id="about">
-        <div class="container about-grid">
-          
-          <!-- About Left Text -->
-          <div class="about-content">
-            <div class="badge-pill">
-              <span>ABOUT ME</span>
+          <!-- Hero Right Column: Profile Image (Full Hero Height) -->
+          <div class="hero-image-col" id="hero-bg-container">
+            <div class="hero-image-wrap">
+              <img src="Profile image 2.png" alt="Rahul - Graphic Designer" class="hero-profile-image" id="hero-bg-image" />
             </div>
-            <h2 class="section-title">
-              I'm passionate about turning ideas into powerful visuals
-            </h2>
-            <p class="section-text">
-              With 6+ years of experience in graphic design, I create bold, engaging, and visually compelling designs that help brands communicate, connect, and stand out.
-            </p>
-            <a href="#projects" class="btn-outline">
-              <span>View My Work</span>
-              <span class="arrow-up-right">↗</span>
-            </a>
-          </div>
-
-          <!-- About Right Stats Grid (2x2) -->
-          <div class="stats-grid">
-            
-            <div class="stat-card">
-              <div class="stat-icon-box">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                </svg>
-              </div>
-              <div class="stat-info">
-                <div class="stat-number">6+</div>
-                <div class="stat-label">Years Experience</div>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon-box">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  <polyline points="2 17 12 22 22 17"></polyline>
-                  <polyline points="2 12 12 17 22 12"></polyline>
-                </svg>
-              </div>
-              <div class="stat-info">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Projects Completed</div>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon-box">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <div class="stat-info">
-                <div class="stat-number">30+</div>
-                <div class="stat-label">Happy Clients</div>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon-box">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="8" r="7"></circle>
-                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-                </svg>
-              </div>
-              <div class="stat-info">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Client Satisfaction</div>
-              </div>
-            </div>
-
           </div>
 
         </div>
       </section>
 
-      <!-- Skills Section -->
-      <section class="skills-section" id="skills">
-        <div class="container">
-          <div class="section-header-center">
-            <div class="badge-pill">
-              <span>MY SKILLS</span>
-            </div>
-            <h2 class="section-title">Creative Tools I Master</h2>
-          </div>
 
-          <div class="skills-grid-creative">
-            
-            <!-- 1. Adobe Photoshop -->
-            <div class="skill-item">
-              <div class="skill-header">
-                <div class="skill-name-wrap">
-                  <span class="skill-icon icon-ps">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <rect width="24" height="24" rx="5" fill="#001e36"/>
-                      <path d="M5.5 7.2h4.5c1.8 0 3 1 3 2.5s-1.2 2.6-3 2.6h-2.3v4.5H5.5V7.2zm2.2 3.4h2.1c.7 0 1.1-.3 1.1-.9 0-.6-.4-.9-1.1-.9H7.7v1.8z" fill="#31a8ff"/>
-                      <path d="M14.2 13.9c.6.4 1.4.7 2.2.7.9 0 1.4-.4 1.4-.9 0-.5-.5-.8-1.5-1.1-1.5-.4-2.3-1-2.3-2.1 0-1.4 1.2-2.3 2.8-2.3.9 0 1.6.2 2.2.5l-.5 1.5c-.5-.3-1.1-.5-1.7-.5-.7 0-1.1.3-1.1.8 0 .5.5.7 1.5 1.1 1.5.5 2.3 1 2.3 2.2 0 1.5-1.2 2.4-3 2.4-.9 0-1.9-.3-2.6-.8l.3-1.5z" fill="#31a8ff"/>
-                    </svg>
-                  </span>
-                  <span class="skill-name">Adobe Photoshop</span>
-                </div>
-                <span class="skill-percentage">95%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-skill-level="95%" style="width: 0%;"></div>
-              </div>
-            </div>
-
-            <!-- 2. Adobe Illustrator -->
-            <div class="skill-item">
-              <div class="skill-header">
-                <div class="skill-name-wrap">
-                  <span class="skill-icon icon-ai">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <rect width="24" height="24" rx="5" fill="#330000"/>
-                      <path d="M5.8 16.8l3.6-9.6h1.8l3.6 9.6h-2.2l-.8-2.3H8.2l-.8 2.3H5.8zm2.9-3.9h2.4L10 9.8h-.1l-1.2 3.1z" fill="#ff9a00"/>
-                      <circle cx="17.5" cy="7.9" r="1.1" fill="#ff9a00"/>
-                      <path d="M16.5 10.2h2.1v6.6h-2.1v-6.6z" fill="#ff9a00"/>
-                    </svg>
-                  </span>
-                  <span class="skill-name">Adobe Illustrator</span>
-                </div>
-                <span class="skill-percentage">90%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-skill-level="90%" style="width: 0%;"></div>
-              </div>
-            </div>
-
-            <!-- 3. Adobe Premiere Pro -->
-            <div class="skill-item">
-              <div class="skill-header">
-                <div class="skill-name-wrap">
-                  <span class="skill-icon icon-pr">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <rect width="24" height="24" rx="5" fill="#00005b"/>
-                      <path d="M5.5 7.2h4.5c1.8 0 3 1 3 2.5s-1.2 2.6-3 2.6h-2.3v4.5H5.5V7.2zm2.2 3.4h2.1c.7 0 1.1-.3 1.1-.9 0-.6-.4-.9-1.1-.9H7.7v1.8z" fill="#ea77ff"/>
-                      <path d="M14.2 10.2h1.9v1.2h.1c.4-.8 1.2-1.3 2.1-1.3.4 0 .7.1.9.2l-.5 1.9c-.3-.1-.6-.2-.9-.2-1.1 0-1.6.8-1.6 2.1v2.7h-2V10.2z" fill="#ea77ff"/>
-                    </svg>
-                  </span>
-                  <span class="skill-name">Adobe Premiere Pro</span>
-                </div>
-                <span class="skill-percentage">95%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-skill-level="95%" style="width: 0%;"></div>
-              </div>
-            </div>
-
-            <!-- 4. Adobe After Effects -->
-            <div class="skill-item">
-              <div class="skill-header">
-                <div class="skill-name-wrap">
-                  <span class="skill-icon icon-ae">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <rect width="24" height="24" rx="5" fill="#00005b"/>
-                      <path d="M5.2 16.8l3.4-9.6h1.7l3.4 9.6h-2.1l-.8-2.3H7.4l-.7 2.3H5.2zm2.8-3.9h2.1L9.1 9.8H9l-1 3.1z" fill="#9999ff"/>
-                      <path d="M13.8 13.5c0-1.9 1.3-3.4 3.4-3.4 2.2 0 3.2 1.7 3.2 3.4v.5h-4.6c.1.9.7 1.4 1.7 1.4.7 0 1.4-.3 1.8-.7l1 1.1c-.6.7-1.7 1.1-2.9 1.1-2.3 0-3.6-1.5-3.6-3.4zm4.7-.8c-.1-.7-.5-1.2-1.4-1.2-.8 0-1.4.5-1.5 1.2h2.9z" fill="#9999ff"/>
-                    </svg>
-                  </span>
-                  <span class="skill-name">Adobe After Effects</span>
-                </div>
-                <span class="skill-percentage">90%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-skill-level="90%" style="width: 0%;"></div>
-              </div>
-            </div>
-
-            <!-- 5. Blender -->
-            <div class="skill-item">
-              <div class="skill-header">
-                <div class="skill-name-wrap">
-                  <span class="skill-icon icon-blender">
-                    <svg width="24" height="24" viewBox="0 0 256 208" fill="none">
-                      <rect width="256" height="208" rx="40" fill="#181a24"/>
-                      <path fill="#ea7600" d="M128 10c-9 0-17 4-22 12l-75 106c-8-4-17-7-26-7-4 0-8 0-12 1 1 2 2 3 3 5l89 65c14 10 32 16 50 16 48 0 88-39 88-88 0-16-4-31-12-44l42-30c8-6 10-17 4-25s-17-10-25-4l-38 27V25c0-8-7-15-15-15h-1z"/>
-                      <circle fill="#ffffff" cx="135" cy="120" r="44"/>
-                      <circle fill="#2563eb" cx="135" cy="120" r="30"/>
-                      <circle fill="#ffffff" cx="127" cy="112" r="9"/>
-                    </svg>
-                  </span>
-                  <span class="skill-name">Blender</span>
-                </div>
-                <span class="skill-percentage">75%</span>
-              </div>
-              <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-skill-level="75%" style="width: 0%;"></div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       <!-- Featured Projects Section -->
       <section class="projects-section" id="projects">
@@ -489,6 +321,238 @@
               </div>
             </a>
 
+          </div>
+        </div>
+      </section>
+
+      <!-- About Me Section -->
+      <section class="about-section" id="about">
+        <div class="container about-grid">
+          
+          <!-- About Left Text -->
+          <div class="about-content">
+            <div class="badge-pill">
+              <span>ABOUT ME</span>
+            </div>
+            <h2 class="section-title">
+              I'm passionate about turning ideas into powerful visuals
+            </h2>
+            <p class="section-text">
+              With 6+ years of experience in graphic design, I create bold, engaging, and visually compelling designs that help brands communicate, connect, and stand out.
+            </p>
+            <a href="#projects" class="btn-outline">
+              <span>View My Work</span>
+              <span class="arrow-up-right">↗</span>
+            </a>
+          </div>
+
+          <!-- About Right Stats Grid (2x2) -->
+          <div class="stats-grid">
+            
+            <div class="stat-card">
+              <div class="stat-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">6+</div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Happy Clients</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Client Satisfaction</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Working with Brands (Work Experience Roadmap) Section -->
+      <section class="experience-section" id="experience">
+        <div class="container">
+          <div class="section-header-center">
+            <div class="badge-pill">
+              <span>WORK EXPERIENCE</span>
+            </div>
+            <h2 class="section-title">Working with Brands</h2>
+          </div>
+
+          <div class="roadmap-scroll-wrapper">
+            <div class="roadmap-timeline">
+              
+              <!-- Continuous Roadmap Path Line -->
+              <div class="roadmap-track-line" aria-hidden="true"></div>
+
+              <!-- Node 1 (Left): Happy Jars -->
+              <div class="roadmap-item">
+                <div class="roadmap-node-container">
+                  <div class="roadmap-node">
+                    <span class="node-dot"></span>
+                  </div>
+                  <div class="roadmap-stem"></div>
+                </div>
+                <div class="roadmap-card">
+                  <div class="roadmap-card-inner">
+                    <div class="roadmap-brand-circle">
+                      <img src="147293091721497151510004681447023617136388n-1610361230952.jpg" alt="Happy Jars Logo" class="roadmap-brand-logo" />
+                    </div>
+                    <div class="roadmap-card-body">
+                      <div class="roadmap-card-topline">
+                        <h3 class="roadmap-role">Graphic Designer</h3>
+                        <span class="roadmap-type-badge">On-site</span>
+                      </div>
+                      <div class="roadmap-company">Happy Jars Private Limited</div>
+                      <div class="roadmap-meta">
+                        <div class="roadmap-meta-item">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                          </svg>
+                          <span>Nov 2022 – Nov 2023</span>
+                        </div>
+                        <div class="roadmap-meta-item">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                          </svg>
+                          <span>New Delhi, India (On-site)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Node 2 (Middle): Feed Smart -->
+              <div class="roadmap-item">
+                <div class="roadmap-node-container">
+                  <div class="roadmap-node">
+                    <span class="node-dot"></span>
+                  </div>
+                  <div class="roadmap-stem"></div>
+                </div>
+                <div class="roadmap-card">
+                  <div class="roadmap-card-inner">
+                    <div class="roadmap-brand-circle">
+                      <img src="FeedSmart_Logotype.webp" alt="Feed Smart Logo" class="roadmap-brand-logo" />
+                    </div>
+                    <div class="roadmap-card-body">
+                      <div class="roadmap-card-topline">
+                        <h3 class="roadmap-role">Graphic Designer</h3>
+                        <span class="roadmap-type-badge">Remote</span>
+                      </div>
+                      <div class="roadmap-company">Feed Smart</div>
+                      <div class="roadmap-meta">
+                        <div class="roadmap-meta-item">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                          </svg>
+                          <span>Nov 2023 – Jul 2025</span>
+                        </div>
+                        <div class="roadmap-meta-item">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                          </svg>
+                          <span>New Delhi, India (Remote)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Node 3 (Right): Emami Ltd -->
+              <div class="roadmap-item active-stage">
+                <div class="roadmap-node-container">
+                  <div class="roadmap-node">
+                    <span class="node-dot"></span>
+                    <span class="node-radar-ping"></span>
+                  </div>
+                  <div class="roadmap-stem"></div>
+                </div>
+                <div class="roadmap-card">
+                  <div class="roadmap-card-inner">
+                    <div class="roadmap-brand-circle">
+                      <img src="emamiLogoNormal2.png" alt="Emami Ltd Logo" class="roadmap-brand-logo" />
+                    </div>
+                    <div class="roadmap-card-body">
+                      <div class="roadmap-card-topline">
+                        <h3 class="roadmap-role">Senior Visualizer</h3>
+                        <span class="roadmap-type-badge active">Present</span>
+                      </div>
+                      <div class="roadmap-company">Emami Ltd</div>
+                      <div class="roadmap-meta">
+                        <div class="roadmap-meta-item">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                          </svg>
+                          <span>Jul 2025 – Present</span>
+                        </div>
+                        <div class="roadmap-meta-item">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                          </svg>
+                          <span>Gurugram, Haryana, India</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>

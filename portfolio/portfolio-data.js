@@ -8,79 +8,202 @@
 
 const PORTFOLIO_DATA = {
   // ========================================================================
-  // CATEGORY 01: CREATIVE ADS
+  // CATEGORY 01: CREATIVE ADS (15 Real Client Campaigns)
   // ========================================================================
   creativeAds: [
     {
       id: "ca-01",
-      title: "Zandu Shilajit // The Right Energy Campaign",
+      title: "Zandu Dirghayuprash // Anti-Aging & Immunity Campaign",
+      brand: "Zandu Care",
       category: "Creative Ads",
-      client: "Zandu Care Official",
+      client: "Zandu Care (Emami)",
       year: "2024",
-      description: "High-impact performance creative and advertising campaign designed for Zandu 100% Pure Himalayan Shilajit. Emphasizes daily vitality, bold typography ('Every Great Day Starts With The Right Energy'), and product-focused visual hierarchy.",
-      tags: ["Creative Ad", "Social Campaign", "Art Direction", "Performance Creative"],
-      aspectClass: "aspect-ad",
-      image: "/creative-ads-cover.png",
+      description: "High-converting social & e-commerce creative highlighting verified customer reviews and 4.5★ Amazon ratings for Zandu Dirghayuprash. Structured around vitality, stamina, and anti-aging benefits.",
+      tags: ["Zandu Care", "Health & Wellness", "Social Ad", "Amazon Ad"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/1200x1200%20(4).jpg",
       featured: true
     },
     {
       id: "ca-02",
-      title: "Aura Audio // Pure Silence Series",
+      title: "Zandu Livital // Ayurvedic Liver Detox Campaign",
+      brand: "Zandu Care",
       category: "Creative Ads",
-      client: "Aura Sound Labs",
+      client: "Zandu Care (Emami)",
       year: "2024",
-      description: "Minimalist, sleek dark aesthetic product ad series spotlighting noise-canceling technology through dramatic lighting, negative space, and refined luxury typography.",
-      tags: ["Product Launch", "Luxury Tech", "Print & Digital"],
-      aspectClass: "aspect-ad",
-      image: "/cat-creative-ads.svg",
+      description: "Elegantly composed wellness creative featuring customer review badge and herbal tabletop presentation for Zandu Livital Revitalizes Liver Health tablets.",
+      tags: ["Zandu Care", "Ayurveda", "Performance Ad", "Social Campaign"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Artboard%205.jpg",
       featured: true
     },
     {
       id: "ca-03",
-      title: "Verve Botanical // Pure Glow Launch",
+      title: "Zandu Shilajit Cool Rush // Burn Without The Heat",
+      brand: "Zandu Care",
       category: "Creative Ads",
-      client: "Verve Skincare",
+      client: "Zandu Care (Emami)",
       year: "2024",
-      description: "Sophisticated editorial advertising suite incorporating organic earth tones, serene glass textures, and clean typography that communicates purity and premium botanical science.",
-      tags: ["Beauty & Wellness", "Social Campaign", "Editorial"],
-      aspectClass: "aspect-ad",
-      image: "/cat-creative-ads.svg",
-      featured: false
+      description: "Dynamic sports and fitness performance creative. Pairs athlete planking action with cool-rush formula messaging and promotional 20% discount offer for summer endurance.",
+      tags: ["Zandu Care", "Fitness Ad", "Sports Nutrition", "Summer Campaign", "Sale & Offers"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Burn%20Without%20the%20Heat_Cool%20Rush_1200x1200%20(1).jpg",
+      featured: true
     },
     {
       id: "ca-04",
-      title: "CyberPulse // Esports Series",
+      title: "Meaty Story // Celebrate Bhai Dooj Festive Campaign",
+      brand: "Meaty Story",
       category: "Creative Ads",
-      client: "Pulse Gaming Gear",
-      year: "2023",
-      description: "Aggressive, high-energy gaming peripheral ad series engineered for Twitch, YouTube pre-rolls, and tech retail displays with glowing cyber-orange highlights.",
-      tags: ["Esports", "Display Ads", "Branding"],
-      aspectClass: "aspect-ad",
-      image: "/cat-creative-ads.svg",
-      featured: false
+      client: "Meaty Story",
+      year: "2024",
+      description: "Warm, appetizing festive dinner table creative celebrating Bhai Dooj. Displays ready-to-eat chicken strips and nuggets with instant grocery delivery partner badges (Blinkit & Zepto).",
+      tags: ["Meaty Story", "Festive Ad", "Food & Beverage", "Social Creative"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Celebrate%20Bhai%20Dooj%20Meaty%20Story.jpg.jpeg",
+      featured: true
     },
     {
       id: "ca-05",
-      title: "Solstice Summer // Retail Billboard",
+      title: "Zandu Gold Plus // Energy + Recovery Combo",
+      brand: "Zandu Care",
       category: "Creative Ads",
-      client: "Solstice Apparel",
-      year: "2023",
-      description: "Vibrant high-fashion seasonal campaign blending urban streetwear lifestyle photography with graphic layout overlays and striking typographic statements.",
-      tags: ["Fashion Retail", "Outdoor Billboard", "Ad Design"],
-      aspectClass: "aspect-ad",
-      image: "/cat-creative-ads.svg",
-      featured: false
+      client: "Zandu Care (Emami)",
+      year: "2024",
+      description: "Premium gold-toned fitness product ad showcasing Shilajit Gold Plus and Ashwagandha Gold Plus bundle. Clean gym lighting with striking offer pricing hierarchy.",
+      tags: ["Zandu Care", "Combo Offer", "Fitness Nutrition", "Sale & Offers"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Energy+Recovery_960x1200.jpg",
+      featured: true
     },
     {
       id: "ca-06",
-      title: "Nova Motors // The Electric Edge",
+      title: "Zandu Good Gut // Cleanse & Detox Shots",
+      brand: "Zandu Care",
       category: "Creative Ads",
-      client: "Nova Automotive",
-      year: "2023",
-      description: "Futuristic luxury EV promotional creative series capturing aerodynamic motion, speed light trails, and premium German-inspired geometric layouts.",
-      tags: ["Automotive", "Key Visual", "Performance Ad"],
-      aspectClass: "aspect-ad",
-      image: "/cat-creative-ads.svg",
+      client: "Zandu Care (Emami)",
+      year: "2024",
+      description: "Clean health and active lifestyle creative demonstrating clinically proven results: 89% reduction in bloating with prebiotic and postbiotic Cleanse & Detox shots.",
+      tags: ["Zandu Care", "Health & Fitness", "Digestion", "Social Campaign"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Good%20Gut%20fitness_1200x1200_.jpg",
+      featured: false
+    },
+    {
+      id: "ca-07",
+      title: "FeedSmart // Herbalicious Jain Ketchup with Pasta",
+      brand: "FeedSmart",
+      category: "Creative Ads",
+      client: "FeedSmart Family Nutrition",
+      year: "2024",
+      description: "Mouthwatering food photography and product packaging creative pairing FeedSmart herbalicious ketchup (no onion, no garlic) with Italian pasta and fresh farm ingredients.",
+      tags: ["FeedSmart", "Food Packaging", "Social Ad", "Healthy Living"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Jain%20Ketchup%20with%20pasta.jpg.jpeg",
+      featured: false
+    },
+    {
+      id: "ca-08",
+      title: "FeedSmart // The Healthiest Ketchup Cinematic Look",
+      brand: "FeedSmart",
+      category: "Creative Ads",
+      client: "FeedSmart Family Nutrition",
+      year: "2024",
+      description: "Award-caliber cinematic commercial key visual featuring floating garden-fresh tomatoes and basil with FeedSmart child-friendly, jaggery-sweetened natural ketchup pouch.",
+      tags: ["FeedSmart", "Cinematic Ad", "Key Visual", "Art Direction"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Ketchup%20Cinematic%20Look.jpg.jpeg",
+      featured: true
+    },
+    {
+      id: "ca-09",
+      title: "Meaty Story // Happy Dussehra Celebration Post",
+      brand: "Meaty Story",
+      category: "Creative Ads",
+      client: "Meaty Story",
+      year: "2024",
+      description: "Dramatic crimson textured vector illustration honoring Dussehra and the victory of good over evil. Features an illuminated silhouette of Lord Rama drawing a bow.",
+      tags: ["Meaty Story", "Festive Creative", "Vector Art", "Brand Awareness"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Meaty%20Story%20Dussehra%20Posts.jpg.jpeg",
+      featured: false
+    },
+    {
+      id: "ca-10",
+      title: "Zandu Care // Payday Sale Flat 35% Off",
+      brand: "Zandu Care",
+      category: "Creative Ads",
+      client: "Zandu Care (Emami)",
+      year: "2024",
+      description: "High-impact monthly e-commerce flash promotion. Features punchy 3D typography, floating currency motifs, and a lineup of best-selling wellness supplements.",
+      tags: ["Zandu Care", "Payday Sale", "Flash Sale", "Sale & Offers"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/PAY%20DAY%20SALE_1200X1200.jpg",
+      featured: false
+    },
+    {
+      id: "ca-11",
+      title: "Zandu Care // Ayurvedic Pain Relief Potli Therapy",
+      brand: "Zandu Care",
+      category: "Creative Ads",
+      client: "Zandu Care (Emami)",
+      year: "2024",
+      description: "Serene herbal therapy creative showcasing Zandu Ayurvedic Pain Relief Potli on a carved stone podium with natural sage green lighting.",
+      tags: ["Zandu Care", "Ayurveda", "Product Launch", "Pain Relief"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Potli.jpg",
+      featured: true
+    },
+    {
+      id: "ca-12",
+      title: "Zandu Care // Republic Day Sale Special",
+      brand: "Zandu Care",
+      category: "Creative Ads",
+      client: "Zandu Care (Emami)",
+      year: "2024",
+      description: "National holiday themed promotional creative with elegant tricolor elements and an exclusive Free Shilajit + Upto 60% Off gift campaign.",
+      tags: ["Zandu Care", "National Holiday", "Special Sale", "Sale & Offers"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Republic%20Sale%201200x1200.jpg",
+      featured: false
+    },
+    {
+      id: "ca-13",
+      title: "Zandu Care // Summer Saver Sale Flat 20% Off",
+      brand: "Zandu Care",
+      category: "Creative Ads",
+      client: "Zandu Care (Emami)",
+      year: "2024",
+      description: "Sunny beachfront summer promotion spotlighting Chandraprash, Ashwagandha 66, and cooling Good Gut shots on golden sand.",
+      tags: ["Zandu Care", "Summer Campaign", "Seasonal Discount", "Sale & Offers"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Summer%20Saver%20Sale%201200x1200.jpg",
+      featured: false
+    },
+    {
+      id: "ca-14",
+      title: "Zandu Care // Winter Fitness Sale Flat 26% Off",
+      brand: "Zandu Care",
+      category: "Creative Ads",
+      client: "Zandu Care (Emami)",
+      year: "2024",
+      description: "Crisp outdoor morning grass setting featuring fitness athlete reaching for daily wellness and Shilajitprash supplements with promotional code FIT26.",
+      tags: ["Zandu Care", "Winter Campaign", "Fitness Motivation", "Sale & Offers"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/WINTER%20FITNESS%20SALE_1200X1200.jpg",
+      featured: false
+    },
+    {
+      id: "ca-15",
+      title: "Zandu Care // 'Yawning All Day?' Hidden Stress Ad",
+      brand: "Zandu Care",
+      category: "Creative Ads",
+      client: "Zandu Care (Emami)",
+      year: "2024",
+      description: "Relatable, high-engagement hook advertisement illustrating workplace fatigue and anxiety, presenting Ashwagandha Gold Plus as the daily stress relief solution.",
+      tags: ["Zandu Care", "Problem-Solution Ad", "Stress Relief", "Social Ad"],
+      aspectClass: "aspect-square",
+      image: "/Ceative%20Ads/Yawning%20All%20Day%201200x1200.jpg",
       featured: true
     }
   ],
@@ -414,6 +537,107 @@ const PORTFOLIO_DATA = {
 // Dynamic Gallery Renderer & Lightbox Controller
 // ========================================================================
 
+// ========================================================================
+// Dynamic Gallery Renderer & Lightbox Controller
+// ========================================================================
+
+let currentGalleryList = [];
+let currentGalleryIndex = 0;
+let currentIsVideo = false;
+
+function displayCurrentGalleryItem() {
+  if (!currentGalleryList || currentGalleryList.length === 0) return;
+  const project = currentGalleryList[currentGalleryIndex];
+  if (!project) return;
+
+  const modal = document.getElementById('project-modal');
+  if (!modal) return;
+
+  // Media Area: Display 1:1 preview image or video
+  const lightboxMedia = modal.querySelector('#modal-media-area') || modal.querySelector('.modal-media-area');
+  const titleEl = modal.querySelector('#modal-title') || modal.querySelector('.modal-title');
+
+  if (lightboxMedia) {
+    if (currentIsVideo && project.videoUrl) {
+      lightboxMedia.innerHTML = `
+        <div class="lightbox-video-wrapper">
+          <video controls autoplay playsinline src="${project.videoUrl}" class="lightbox-video">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      `;
+    } else {
+      lightboxMedia.innerHTML = `
+        <img src="${project.image}" alt="${project.title}" class="lightbox-fullscreen-img" />
+      `;
+    }
+  }
+
+  // Display ONLY the main Project Heading below the square image
+  if (titleEl) {
+    titleEl.textContent = project.title;
+  }
+
+  // Ensure all other metadata elements are cleared / hidden
+  const counterEl = modal.querySelector('#modal-counter');
+  const brandEl = modal.querySelector('#modal-brand-pill');
+  const descEl = modal.querySelector('#modal-desc') || modal.querySelector('.modal-desc');
+  const tagsEl = modal.querySelector('#modal-tags');
+  const metaGrid = modal.querySelector('.modal-meta-grid');
+  const tagEl = modal.querySelector('.modal-tag');
+  
+  if (counterEl) counterEl.textContent = '';
+  if (brandEl) brandEl.textContent = '';
+  if (descEl) descEl.textContent = '';
+  if (tagsEl) tagsEl.innerHTML = '';
+  if (tagEl) tagEl.textContent = '';
+  if (metaGrid) metaGrid.innerHTML = '';
+
+  modal.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function openModal(project, isVideo, index, items) {
+  if (items && items.length > 0) {
+    currentGalleryList = items;
+    currentGalleryIndex = typeof index === 'number' ? index : items.indexOf(project);
+    if (currentGalleryIndex < 0) currentGalleryIndex = 0;
+  } else {
+    currentGalleryList = [project];
+    currentGalleryIndex = 0;
+  }
+  currentIsVideo = Boolean(isVideo);
+  displayCurrentGalleryItem();
+}
+
+function nextGalleryItem() {
+  if (!currentGalleryList || currentGalleryList.length <= 1) return;
+  currentGalleryIndex = (currentGalleryIndex + 1) % currentGalleryList.length;
+  displayCurrentGalleryItem();
+}
+
+function prevGalleryItem() {
+  if (!currentGalleryList || currentGalleryList.length <= 1) return;
+  currentGalleryIndex = (currentGalleryIndex - 1 + currentGalleryList.length) % currentGalleryList.length;
+  displayCurrentGalleryItem();
+}
+
+function closeModal() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+  const modal = document.getElementById('project-modal');
+  if (!modal) return;
+
+  // Stop video playback if playing
+  const video = modal.querySelector('video');
+  if (video) {
+    video.pause();
+    video.src = '';
+  }
+
+  modal.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
 function initPortfolioGallery(categoryKey) {
   if (typeof window === 'undefined' || typeof document === 'undefined') return;
   const container = document.getElementById('gallery-container');
@@ -428,65 +652,47 @@ function initPortfolioGallery(categoryKey) {
     if (items.length === 0) {
       container.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: #94a3b8;">
-          <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">No projects found in this view.</p>
+          <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">No projects found matching this filter.</p>
         </div>
       `;
       return;
     }
 
-    items.forEach(project => {
+    items.forEach((project, idx) => {
       const card = document.createElement('article');
-      card.className = 'gallery-card';
+      card.className = 'gallery-card clean-square-card';
       card.setAttribute('data-id', project.id);
       card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'button');
-      card.setAttribute('aria-label', `View details for ${project.title}`);
+      card.setAttribute('aria-label', `View full-screen preview for ${project.title}`);
 
       const isVideo = categoryKey === 'videoAds' || Boolean(project.videoUrl);
 
       card.innerHTML = `
-        <div class="card-media-wrap ${project.aspectClass || 'aspect-ad'}">
+        <div class="card-media-wrap aspect-square">
           <img src="${project.image}" alt="${project.title}" class="card-image" loading="lazy" />
-          <div class="card-media-overlay"></div>
           
+          <!-- Hover State: Smooth Dark Overlay + Centered Project Heading only -->
+          <div class="card-hover-overlay">
+            <h3 class="card-hover-title">${project.title}</h3>
+          </div>
+
           ${isVideo ? `
             <div class="video-play-badge" title="Watch Video">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z"/>
               </svg>
             </div>
             ${project.duration ? `<span class="video-duration">${project.duration}</span>` : ''}
-          ` : `
-            <div class="card-expand-badge" title="Expand Project">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <polyline points="9 21 3 21 3 15"></polyline>
-                <line x1="21" y1="3" x2="14" y2="10"></line>
-                <line x1="3" y1="21" x2="10" y2="14"></line>
-              </svg>
-            </div>
-          `}
-        </div>
-
-        <div class="card-info">
-          <h3 class="card-title">${project.title}</h3>
-          
-          <div class="card-tags">
-            ${(project.tags || []).map(t => `<span class="card-tag">#${t}</span>`).join('')}
-          </div>
-
-          <div class="card-footer-action">
-            <span>View Full Artwork</span>
-            <span class="action-arrow">→</span>
-          </div>
+          ` : ''}
         </div>
       `;
 
-      card.addEventListener('click', () => openModal(project, isVideo));
+      card.addEventListener('click', () => openModal(project, isVideo, idx, items));
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          openModal(project, isVideo);
+          openModal(project, isVideo, idx, items);
         }
       });
 
@@ -509,7 +715,11 @@ function initPortfolioGallery(categoryKey) {
       } else if (filter === 'featured') {
         render(projects.filter(p => p.featured));
       } else {
-        render(projects.filter(p => p.tags && p.tags.some(t => t.toLowerCase().includes(filter.toLowerCase()))));
+        render(projects.filter(p => 
+          (p.brand && p.brand.toLowerCase().includes(filter.toLowerCase())) ||
+          (p.tags && p.tags.some(t => t.toLowerCase().includes(filter.toLowerCase()))) ||
+          (p.title && p.title.toLowerCase().includes(filter.toLowerCase()))
+        ));
       }
     });
   });
@@ -518,75 +728,80 @@ function initPortfolioGallery(categoryKey) {
   render(projects);
 }
 
-// Modal handling
-function openModal(project, isVideo) {
-  if (typeof window === 'undefined' || typeof document === 'undefined') return;
-  const modal = document.getElementById('project-modal');
-  if (!modal) return;
+// Setup Theme Toggle for Category Pages
+function setupPortfolioThemeToggle() {
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  if (!themeToggleBtn) return;
 
-  const mediaArea = modal.querySelector('.modal-media-area');
-  const tagEl = modal.querySelector('.modal-tag');
-  const titleEl = modal.querySelector('.modal-title');
-  const descEl = modal.querySelector('.modal-desc');
-  const clientEl = modal.querySelector('.modal-client-val');
-  const yearEl = modal.querySelector('.modal-year-val');
-  const categoryEl = modal.querySelector('.modal-category-val');
-
-  if (isVideo && project.videoUrl) {
-    mediaArea.innerHTML = `
-      <div class="modal-video-wrapper">
-        <video controls autoplay playsinline src="${project.videoUrl}" style="width:100%;height:100%;">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    `;
-  } else {
-    mediaArea.innerHTML = `<img src="${project.image}" alt="${project.title}" />`;
+  function updateAriaLabel(theme) {
+    const label = theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme';
+    themeToggleBtn.setAttribute('aria-label', label);
+    themeToggleBtn.setAttribute('title', label);
   }
 
-  if (tagEl) tagEl.textContent = project.category;
-  if (titleEl) titleEl.textContent = project.title;
-  if (descEl) descEl.textContent = '';
-  if (clientEl) clientEl.textContent = '';
-  if (yearEl) yearEl.textContent = '';
-  if (categoryEl) categoryEl.textContent = (project.tags || []).join(' • ');
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  updateAriaLabel(currentTheme);
 
-  modal.classList.add('is-open');
-  document.body.style.overflow = 'hidden';
+  themeToggleBtn.addEventListener('click', () => {
+    const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const targetTheme = activeTheme === 'light' ? 'dark' : 'light';
+
+    document.documentElement.setAttribute('data-theme', targetTheme);
+    updateAriaLabel(targetTheme);
+
+    try {
+      localStorage.setItem('portfolio-theme', targetTheme);
+    } catch (e) {
+      console.warn('Could not save theme preference:', e);
+    }
+  });
 }
 
-function closeModal() {
-  if (typeof window === 'undefined' || typeof document === 'undefined') return;
-  const modal = document.getElementById('project-modal');
-  if (!modal) return;
-
-  // Stop video playback if playing
-  const video = modal.querySelector('video');
-  if (video) {
-    video.pause();
-    video.src = '';
-  }
-
-  modal.classList.remove('is-open');
-  document.body.style.overflow = '';
-}
-
-// Setup modal event listeners
+// Setup modal and theme event listeners
 if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   document.addEventListener('DOMContentLoaded', () => {
+    setupPortfolioThemeToggle();
+
     const modal = document.getElementById('project-modal');
     if (!modal) return;
 
-    const closeBtn = modal.querySelector('.modal-close-btn');
+    const closeBtn = modal.querySelector('#modal-close-btn') || modal.querySelector('.modal-close-btn') || modal.querySelector('.lightbox-close-btn');
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
+    const prevBtn = modal.querySelector('#modal-prev-btn') || modal.querySelector('.lightbox-prev-btn');
+    if (prevBtn) prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      prevGalleryItem();
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+    const nextBtn = modal.querySelector('#modal-next-btn') || modal.querySelector('.lightbox-next-btn');
+    if (nextBtn) nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      nextGalleryItem();
+    });
+
+    // Clicking OUTSIDE the image / card wrapper closes the modal
+    modal.addEventListener('click', (e) => {
+      const isInsideCard = e.target.closest('#modal-card-wrapper') || e.target.closest('.modal-container');
+      const isNavBtn = e.target.closest('.lightbox-nav-btn') || e.target.closest('.lightbox-close-btn') || e.target.closest('.modal-close-btn');
+
+      if (!isInsideCard && !isNavBtn) {
         closeModal();
+      }
+    });
+
+    // Keyboard support: Esc to close, Arrow keys to navigate gallery
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('is-open')) return;
+
+      if (e.key === 'Escape') {
+        closeModal();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevGalleryItem();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextGalleryItem();
       }
     });
   });

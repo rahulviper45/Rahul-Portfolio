@@ -1,52 +1,25 @@
 {
-  "version": 2,
-  "framework": null,
   "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
+  "routes": [
     {
-      "source": "/(.*)\\.(jpg|jpeg|png|webp|svg|ico|woff2|woff|ttf)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "src": "/portfolio/creative-ads",
+      "dest": "/portfolio/creative-ads.html"
     },
     {
-      "source": "/(.*)\\.mp4",
-      "headers": [
-        {
-          "key": "Accept-Ranges",
-          "value": "bytes"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
-        }
-      ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/portfolio/creative-ads",
-      "destination": "/portfolio/creative-ads.html"
+      "src": "/portfolio/illustration",
+      "dest": "/portfolio/illustration.html"
     },
     {
-      "source": "/portfolio/video-ads",
-      "destination": "/portfolio/video-ads.html"
+      "src": "/portfolio/print-media",
+      "dest": "/portfolio/print-media.html"
     },
     {
-      "source": "/portfolio/print-media",
-      "destination": "/portfolio/print-media.html"
+      "src": "/portfolio/video-ads",
+      "dest": "/portfolio/video-ads.html"
     },
     {
-      "source": "/portfolio/website-creatives",
-      "destination": "/portfolio/website-creatives.html"
-    },
-    {
-      "source": "/portfolio/illustration",
-      "destination": "/portfolio/illustration.html"
+      "src": "/portfolio/website-creatives",
+      "dest": "/portfolio/website-creatives.html"
     }
   ]
 }
