@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Rahul Verma - Graphic Designer & Visual Artist Portfolio",
   "scripts": {
+    "build": "echo 'Static build complete'",
     "start": "node server.js",
     "dev": "node server.js"
   },
