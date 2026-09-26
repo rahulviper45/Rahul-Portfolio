@@ -22,9 +22,9 @@
     <rect width="460" height="235" rx="12" fill="url(#va-screen)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
     
     <!-- Motion Visual Shapes in Frame -->
-    <circle cx="230" cy="115" r="90" fill="#ff6026" opacity="0.08" filter="blur(20px)"/>
+    <circle cx="230" cy="115" r="90" fill="#ff6026" opacity="0.08" style="filter: blur(20px);"/>
     <path d="M60 180 Q 150 70, 230 115 T 400 60" fill="none" stroke="url(#va-orange)" stroke-width="3" opacity="0.6"/>
-    <circle cx="230" cy="115" r="50" fill="rgba(18,20,29,0.85)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" filter="drop-shadow(0 8px 25px rgba(255,96,38,0.35))"/>
+    <circle cx="230" cy="115" r="50" fill="rgba(18,20,29,0.85)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" style="filter: drop-shadow(0 8px 25px rgba(255,96,38,0.35));"/>
     
     <!-- Glowing Play Button -->
     <polygon points="225,103 243,115 225,127" fill="#ff6026"/>
@@ -40,7 +40,7 @@
     <!-- Bottom Timeline Track inside video -->
     <rect x="20" y="205" width="420" height="4" rx="2" fill="rgba(255,255,255,0.15)"/>
     <rect x="20" y="205" width="180" height="4" rx="2" fill="url(#va-orange)"/>
-    <circle cx="200" cy="207" r="6" fill="#ffffff" filter="drop-shadow(0 0 6px #ff6026)"/>
+    <circle cx="200" cy="207" r="6" fill="#ffffff" style="filter: drop-shadow(0 0 6px #ff6026);"/>
   </g>
 
   <!-- Sound / Track Strip at bottom -->

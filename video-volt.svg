@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="volt-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140a04"/>
+      <stop offset="50%" stop-color="#1f1107"/>
+      <stop offset="100%" stop-color="#0a0502"/>
+    </linearGradient>
+    <linearGradient id="volt-lightning" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb703"/>
+      <stop offset="50%" stop-color="#fb8500"/>
+      <stop offset="100%" stop-color="#ff006e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#volt-bg)"/>
+  
+  <!-- High Voltage Diagonal Energy Lines -->
+  <g opacity="0.3">
+    <polygon points="400,0 600,0 200,1080 0,1080" fill="url(#volt-lightning)"/>
+    <polygon points="900,0 1150,0 700,1080 450,1080" fill="url(#volt-lightning)" opacity="0.6"/>
+    <polygon points="1500,0 1800,0 1350,1080 1050,1080" fill="url(#volt-lightning)"/>
+  </g>
+  
+  <!-- Central Lightning Bolt Icon -->
+  <polygon points="960,340 910,480 970,480 930,620 1030,460 970,460" fill="#ffb703" opacity="0.85"/>
+  
+  <!-- Central Typography / Brand Lockup -->
+  <g transform="translate(960, 520)" text-anchor="middle">
+    <text x="0" y="-40" font-family="'Inter', sans-serif" font-weight="900" font-size="76" letter-spacing="10" fill="#ffffff">VOLT ENERGY</text>
+    <text x="0" y="30" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="28" letter-spacing="8" fill="#fb8500">// PURE FOCUS TEASER</text>
+    <text x="0" y="80" font-family="'Inter', sans-serif" font-weight="600" font-size="20" letter-spacing="4" fill="#94a3b8">BEVERAGE COMMERCIAL &amp; HIGH-VOLTAGE FAST CUT</text>
+  </g>
+  
+  <rect x="80" y="80" width="160" height="44" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)"/>
+  <circle cx="110" cy="102" r="7" fill="#fb8500"/>
+  <text x="130" y="108" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="16" fill="#ffffff">COMMERCIAL</text>
+</svg>

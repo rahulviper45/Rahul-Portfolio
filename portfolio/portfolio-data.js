@@ -228,6 +228,34 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "va-02",
+      title: "Zandu Good Gut // Food Lover UGC Video Ad",
+      category: "Video Ads",
+      client: "Zandu Care Official",
+      year: "2024",
+      duration: "0:18",
+      description: "Relatable, high-energy UGC commercial video advertisement spotlighting everyday food lovers enjoying their meals with effortless digestion and bloating relief. Features authentic conversational framing, crisp product showcase, and 1920x1080 FHD resolution.",
+      tags: ["Commercial", "UGC Video", "Video Ad", "Ayurveda", "Social Ad"],
+      aspectClass: "aspect-video",
+      image: "/video-food-lover.png",
+      videoUrl: "/Videos%20Ads/Food%20Lover%20Ai%20Male%20video_UGC_1920x1080_1.mp4",
+      featured: true
+    },
+    {
+      id: "va-03",
+      title: "Zandu Good Gut // Office Professionals Video Ad",
+      category: "Video Ads",
+      client: "Zandu Care Official",
+      year: "2024",
+      duration: "0:23",
+      description: "Sleek corporate lifestyle video ad tailored for office professionals tackling long work hours, sedentary stress, and acidity. Highlights cinematic product shots, high-clarity typography, and crisp 1920x1080 resolution.",
+      tags: ["Commercial", "Video Ad", "Product Showcase", "Ayurveda", "Corporate"],
+      aspectClass: "aspect-video",
+      image: "/video-office-pro.png",
+      videoUrl: "/Videos%20Ads/Office%20Professionals_AI%20Male%202_1920x1080.mp4",
+      featured: true
+    },
+    {
+      id: "va-04",
       title: "Velocity Running // Faster Than Light",
       category: "Video Ads",
       client: "Velocity Athletic",
@@ -236,12 +264,12 @@ const PORTFOLIO_DATA = {
       description: "Punchy, fast-paced kinetic typography and athlete motion graphics cut to an 140 BPM electronic track. Built to convert on TikTok and Meta Stories.",
       tags: ["Kinetic Typography", "Sports Motion", "Short-Form"],
       aspectClass: "aspect-video",
-      image: "/cat-video-ads.svg",
+      image: "/video-velocity.svg",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-      featured: true
+      featured: false
     },
     {
-      id: "va-03",
+      id: "va-05",
       title: "FinTrack Mobile // Future of Wealth",
       category: "Video Ads",
       client: "FinTrack Global",
@@ -250,12 +278,12 @@ const PORTFOLIO_DATA = {
       description: "Smooth app interface reveal animation with fluid isometric card motions, glowing graph visualizations, and clean UI transitions designed to drive app installs.",
       tags: ["UI Animation", "Fintech Promo", "Explainer Ad"],
       aspectClass: "aspect-video",
-      image: "/cat-video-ads.svg",
+      image: "/video-fintrack.svg",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
       featured: false
     },
     {
-      id: "va-04",
+      id: "va-06",
       title: "Echo Soundscape // Hear Everything",
       category: "Video Ads",
       client: "Echo Acoustics",
@@ -264,12 +292,12 @@ const PORTFOLIO_DATA = {
       description: "Visual soundwave animations that pulse and deform with atmospheric audio design, showcasing active noise cancellation in immersive urban environments.",
       tags: ["Soundwave Motion", "Tech Product", "Motion Graphics"],
       aspectClass: "aspect-video",
-      image: "/cat-video-ads.svg",
+      image: "/video-echo.svg",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4",
       featured: false
     },
     {
-      id: "va-05",
+      id: "va-07",
       title: "Volt Energy // Pure Focus Teaser",
       category: "Video Ads",
       client: "Volt Beverages",
@@ -278,12 +306,12 @@ const PORTFOLIO_DATA = {
       description: "High-voltage motion cut combining glitch transitions, bold neon type lockups, and liquid splash effects for peak social media engagement.",
       tags: ["Brand Teaser", "Glitch Effects", "Fast Cut"],
       aspectClass: "aspect-video",
-      image: "/cat-video-ads.svg",
+      image: "/video-volt.svg",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
       featured: false
     },
     {
-      id: "va-06",
+      id: "va-08",
       title: "Horizon Electronic Music Festival 2024",
       category: "Video Ads",
       client: "Horizon Live",
@@ -292,9 +320,9 @@ const PORTFOLIO_DATA = {
       description: "Full lineup motion graphics reveal featuring laser grid simulations, 3D chrome typography, and dynamic festival stage visual teasers.",
       tags: ["Festival Trailer", "3D Chrome", "Event Visuals"],
       aspectClass: "aspect-video",
-      image: "/cat-video-ads.svg",
+      image: "/video-horizon.svg",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-      featured: true
+      featured: false
     }
   ],
 
@@ -553,12 +581,25 @@ function displayCurrentGalleryItem() {
   const modal = document.getElementById('project-modal');
   if (!modal) return;
 
-  // Media Area: Display 1:1 preview image or video
+  const cardWrapper = modal.querySelector('#modal-card-wrapper') || modal.querySelector('.lightbox-card-wrapper');
   const lightboxMedia = modal.querySelector('#modal-media-area') || modal.querySelector('.modal-media-area');
   const titleEl = modal.querySelector('#modal-title') || modal.querySelector('.modal-title');
 
+  const isVideo = Boolean(project.videoUrl) || project.category === 'Video Ads' || currentIsVideo;
+  const isBanner = Boolean(project.aspectClass === 'aspect-banner') || project.category === 'Website Creatives';
+
   if (lightboxMedia) {
-    if (currentIsVideo && project.videoUrl) {
+    if (isVideo && project.videoUrl) {
+      modal.classList.add('is-video-modal');
+      modal.classList.remove('is-banner-modal');
+      if (cardWrapper) {
+        cardWrapper.classList.add('is-video');
+        cardWrapper.classList.remove('is-banner');
+        cardWrapper.style.width = '';
+        cardWrapper.style.maxWidth = '';
+      }
+      lightboxMedia.classList.add('aspect-video');
+      lightboxMedia.classList.remove('aspect-banner');
       lightboxMedia.innerHTML = `
         <div class="lightbox-video-wrapper">
           <video controls autoplay playsinline src="${project.videoUrl}" class="lightbox-video">
@@ -566,7 +607,48 @@ function displayCurrentGalleryItem() {
           </video>
         </div>
       `;
+    } else if (isBanner) {
+      modal.classList.remove('is-video-modal');
+      modal.classList.add('is-banner-modal');
+      if (cardWrapper) {
+        cardWrapper.classList.remove('is-video');
+        cardWrapper.classList.add('is-banner');
+      }
+      lightboxMedia.classList.remove('aspect-video');
+      lightboxMedia.classList.add('aspect-banner');
+      lightboxMedia.innerHTML = `
+        <img src="${project.image}" alt="${project.title}" class="lightbox-fullscreen-img banner-preview-img" />
+      `;
+
+      // Dynamically size modal wrapper to match banner image aspect ratio perfectly
+      const previewImg = lightboxMedia.querySelector('img');
+      if (previewImg && cardWrapper) {
+        const fitBanner = () => {
+          if (previewImg.naturalWidth && previewImg.naturalHeight) {
+            const ratio = previewImg.naturalWidth / previewImg.naturalHeight;
+            const maxH = window.innerHeight * 0.82 - 75;
+            const idealW = Math.min(window.innerWidth * 0.94, Math.max(500, maxH * ratio), 1260);
+            cardWrapper.style.width = `${Math.round(idealW)}px`;
+            cardWrapper.style.maxWidth = `${Math.round(idealW)}px`;
+          }
+        };
+        if (previewImg.complete && previewImg.naturalWidth) {
+          fitBanner();
+        } else {
+          previewImg.onload = fitBanner;
+        }
+      }
     } else {
+      modal.classList.remove('is-video-modal');
+      modal.classList.remove('is-banner-modal');
+      if (cardWrapper) {
+        cardWrapper.classList.remove('is-video');
+        cardWrapper.classList.remove('is-banner');
+        cardWrapper.style.width = '';
+        cardWrapper.style.maxWidth = '';
+      }
+      lightboxMedia.classList.remove('aspect-video');
+      lightboxMedia.classList.remove('aspect-banner');
       lightboxMedia.innerHTML = `
         <img src="${project.image}" alt="${project.title}" class="lightbox-fullscreen-img" />
       `;
@@ -635,6 +717,20 @@ function closeModal() {
   }
 
   modal.classList.remove('is-open');
+  modal.classList.remove('is-video-modal');
+  modal.classList.remove('is-banner-modal');
+  const cardWrapper = modal.querySelector('#modal-card-wrapper') || modal.querySelector('.lightbox-card-wrapper');
+  if (cardWrapper) {
+    cardWrapper.classList.remove('is-video');
+    cardWrapper.classList.remove('is-banner');
+    cardWrapper.style.width = '';
+    cardWrapper.style.maxWidth = '';
+  }
+  const lightboxMedia = modal.querySelector('#modal-media-area') || modal.querySelector('.modal-media-area');
+  if (lightboxMedia) {
+    lightboxMedia.classList.remove('aspect-video');
+    lightboxMedia.classList.remove('aspect-banner');
+  }
   document.body.style.overflow = '';
 }
 
@@ -659,17 +755,21 @@ function initPortfolioGallery(categoryKey) {
     }
 
     items.forEach((project, idx) => {
+      const isVideo = categoryKey === 'videoAds' || Boolean(project.videoUrl);
+      const isBanner = categoryKey === 'websiteCreatives' || project.aspectClass === 'aspect-banner';
       const card = document.createElement('article');
-      card.className = 'gallery-card clean-square-card';
+      card.className = isVideo 
+        ? 'gallery-card video-card aspect-video' 
+        : isBanner 
+          ? 'gallery-card banner-card aspect-banner' 
+          : 'gallery-card clean-square-card';
       card.setAttribute('data-id', project.id);
       card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'button');
       card.setAttribute('aria-label', `View full-screen preview for ${project.title}`);
 
-      const isVideo = categoryKey === 'videoAds' || Boolean(project.videoUrl);
-
       card.innerHTML = `
-        <div class="card-media-wrap aspect-square">
+        <div class="card-media-wrap ${isVideo ? 'aspect-video' : isBanner ? 'aspect-banner' : 'aspect-square'}">
           <img src="${project.image}" alt="${project.title}" class="card-image" loading="lazy" />
           
           <!-- Hover State: Smooth Dark Overlay + Centered Project Heading only -->

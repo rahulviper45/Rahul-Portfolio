@@ -18,6 +18,10 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     const canvas = document.getElementById('scroll-canvas');
     const ctx = canvas ? canvas.getContext('2d', { alpha: false }) : null;
 
+  function isDarkMode() {
+    return document.documentElement.getAttribute('data-theme') !== 'light';
+  }
+
   const frames = new Array(TOTAL_FRAMES);
   let loadedFramesCount = 0;
   let isReady = false;
@@ -33,77 +37,117 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
 
   // Set high-DPI canvas resolution
   function resizeCanvas() {
+    if (!canvas) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = Math.floor(window.innerWidth * dpr);
     canvas.height = Math.floor(window.innerHeight * dpr);
 
-    if (frames[Math.floor(currentFrame)]) {
+    if (isDarkMode() && frames[Math.floor(currentFrame)]) {
       drawFrame(currentFrame);
     }
   }
 
-  // Preload all 300 frames
+  function dismissPreloader() {
+    if (isReady) return;
+    isReady = true;
+    if (preloader) {
+      preloader.classList.add('fade-out');
+      document.body.classList.remove('is-loading');
+    }
+    triggerHeroLoadAnimations();
+    updateTargetFromScroll();
+    if (isDarkMode()) {
+      drawFrame(targetFrame);
+    }
+  }
+
+  // Preload frames with fast startup and background progressive streaming
   function preloadImages() {
-    // Load first frame immediately
+    // 1. Load initial frame 0 immediately
     const firstImg = new Image();
     firstImg.src = getFramePath(0);
     firstImg.onload = () => {
       frames[0] = firstImg;
       loadedFramesCount++;
-      drawFrame(0);
+      if (isDarkMode()) {
+        drawFrame(0);
+      }
     };
 
-    const promises = [];
-    for (let i = 0; i < TOTAL_FRAMES; i++) {
-      if (i === 0 && frames[0]) continue;
+    // 2. Preload first 12 frames urgently, then unlock preloader
+    const initialBatch = 12;
+    let initialLoaded = 0;
 
-      promises.push(
-        new Promise((resolve) => {
-          const img = new Image();
-          img.src = getFramePath(i);
-          img.onload = () => {
-            frames[i] = img;
-            loadedFramesCount++;
-            updateProgress();
-            resolve();
-          };
-          img.onerror = () => {
-            frames[i] = frames[i - 1] || null;
-            loadedFramesCount++;
-            updateProgress();
-            resolve();
-          };
-        })
-      );
+    for (let i = 1; i < initialBatch; i++) {
+      const img = new Image();
+      img.src = getFramePath(i);
+      img.onload = () => {
+        frames[i] = img;
+        loadedFramesCount++;
+        initialLoaded++;
+        updateProgress();
+        if (initialLoaded >= initialBatch - 2) {
+          dismissPreloader();
+        }
+      };
+      img.onerror = () => {
+        initialLoaded++;
+        if (initialLoaded >= initialBatch - 2) {
+          dismissPreloader();
+        }
+      };
     }
+
+    // Safety timeout: dismiss preloader after 700ms max so user is never stuck
+    setTimeout(dismissPreloader, 700);
+
+    // 3. Load remaining frames progressively in background
+    let nextIndex = initialBatch;
+    function loadNextBatch() {
+      if (nextIndex >= TOTAL_FRAMES) return;
+      const batchEnd = Math.min(nextIndex + 6, TOTAL_FRAMES);
+      for (let i = nextIndex; i < batchEnd; i++) {
+        const img = new Image();
+        img.src = getFramePath(i);
+        img.onload = () => {
+          frames[i] = img;
+          loadedFramesCount++;
+          updateProgress();
+        };
+        img.onerror = () => {
+          frames[i] = frames[i - 1] || frames[0] || null;
+        };
+      }
+      nextIndex = batchEnd;
+      if (nextIndex < TOTAL_FRAMES) {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadNextBatch, { timeout: 150 });
+        } else {
+          setTimeout(loadNextBatch, 50);
+        }
+      }
+    }
+
+    setTimeout(loadNextBatch, 100);
 
     function updateProgress() {
       const pct = Math.min(Math.round((loadedFramesCount / TOTAL_FRAMES) * 100), 100);
       if (preloaderFill) preloaderFill.style.width = `${pct}%`;
       if (preloaderText) preloaderText.textContent = `Loading experience... ${pct}%`;
     }
-
-    Promise.all(promises).then(() => {
-      isReady = true;
-      if (preloader) {
-        preloader.classList.add('fade-out');
-        document.body.classList.remove('is-loading');
-      }
-      triggerHeroLoadAnimations();
-      updateTargetFromScroll();
-      drawFrame(targetFrame);
-    });
   }
 
-  // Draw current frame using cover aspect ratio
+  // Draw current frame using cover aspect ratio (Dark mode only, no blur)
   function drawFrame(frameIdx) {
+    if (!isDarkMode() || !canvas || !ctx) return;
+
     const index = Math.min(Math.max(Math.round(frameIdx), 0), TOTAL_FRAMES - 1);
     
     let img = frames[index];
-    if (!img) {
-      for (let offset = 1; offset < 30; offset++) {
-        if (frames[index - offset]) { img = frames[index - offset]; break; }
-        if (frames[index + offset]) { img = frames[index + offset]; break; }
+    if (!img || !img.naturalWidth) {
+      for (let offset = 1; offset < TOTAL_FRAMES; offset++) {
+        if (frames[index - offset] && frames[index - offset].naturalWidth) { img = frames[index - offset]; break; }
+        if (frames[index + offset] && frames[index + offset].naturalWidth) { img = frames[index + offset]; break; }
       }
     }
     if (!img || !img.naturalWidth) return;
@@ -329,14 +373,16 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       updateTargetFromScroll(currentScrollY);
     }
 
-    // 2. Background video canvas lerp
-    const diff = targetFrame - currentFrame;
-    if (Math.abs(diff) > 0.005) {
-      currentFrame += diff * LERP_FACTOR;
-      drawFrame(currentFrame);
-    } else if (lastDrawnFrame !== Math.round(currentFrame)) {
-      currentFrame = targetFrame;
-      drawFrame(currentFrame);
+    // 2. Background video canvas lerp (in Dark Mode only)
+    if (isDarkMode() && canvas && ctx) {
+      const diff = targetFrame - currentFrame;
+      if (Math.abs(diff) > 0.005) {
+        currentFrame += diff * LERP_FACTOR;
+        drawFrame(currentFrame);
+      } else if (lastDrawnFrame !== Math.round(currentFrame)) {
+        currentFrame = targetFrame;
+        drawFrame(currentFrame);
+      }
     }
 
     // 3. Hero Background Image Cinematic Scroll Animation
@@ -377,14 +423,11 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
           opacity = Math.max(0, 1 - ease);
         }
 
-        // Soft depth-of-field blur as the portrait recedes
-        const blur = sp > 0.55 ? (sp - 0.55) * 10 : 0;
-
-        // Apply scroll fade opacity once loaded
+        // Apply scroll fade opacity once loaded (no blur filter)
         if (heroBgContainer.classList.contains('is-loaded')) {
           heroBgContainer.style.opacity = opacity.toFixed(4);
         }
-        heroBgImage.style.filter = blur > 0.2 ? `blur(${blur.toFixed(1)}px)` : '';
+        heroBgImage.style.filter = '';
 
         // Combined transform: parallax translateY + mouse float + camera zoom
         const totalX = currentMouseX.toFixed(2);
@@ -445,6 +488,11 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
         localStorage.setItem('portfolio-theme', targetTheme);
       } catch (e) {
         console.warn('Could not save theme preference:', e);
+      }
+
+      if (targetTheme === 'dark') {
+        resizeCanvas();
+        drawFrame(currentFrame);
       }
     });
   }
