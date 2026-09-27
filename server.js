@@ -19,7 +19,8 @@ const MIME_TYPES = {
   '.woff2': 'font/woff2',
   '.woff': 'font/woff',
   '.ttf': 'font/ttf',
-  '.mp4': 'video/mp4'
+  '.mp4': 'video/mp4',
+  '.pdf': 'application/pdf'
 };
 
 function serveFile(req, res, filePath) {
@@ -70,7 +71,7 @@ function serveFile(req, res, filePath) {
       'Access-Control-Allow-Origin': '*'
     };
 
-    if (ext === '.jpg' || ext === '.jpeg' || ext === '.png' || ext === '.webp' || ext === '.svg') {
+    if (ext === '.jpg' || ext === '.jpeg' || ext === '.png' || ext === '.webp' || ext === '.svg' || ext === '.pdf') {
       headers['Cache-Control'] = 'public, max-age=86400, immutable';
     } else {
       headers['Cache-Control'] = 'no-cache';

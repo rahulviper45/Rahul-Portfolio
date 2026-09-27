@@ -6,7 +6,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/(.*)\\.(jpg|jpeg|png|webp|svg|ico|woff2|woff|ttf)",
+      "source": "/(.*)\\.(jpg|jpeg|png|webp|svg|ico|woff2|woff|ttf|pdf)",
       "headers": [
         {
           "key": "Cache-Control",
